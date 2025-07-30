@@ -1,7 +1,8 @@
 // src/App.jsx
 
 import React from 'react';
-import Header from './components/Header.jsx'; 
+import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
 import './App.css';
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
        <main style={{paddingTop: '76px' }}>
        <h1>Página da GertiCloud</h1>
       </main>
+       <Footer />
      </>
   )
 }
