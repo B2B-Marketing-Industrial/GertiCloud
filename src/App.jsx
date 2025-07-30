@@ -4,6 +4,7 @@ import React from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Features from './components/Features.jsx';
+import Services from './components/Services.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
 
@@ -12,7 +13,10 @@ function App() {
     <>
       <Header />
       <Hero />
-       <main><Features />
+       <main>
+        <Features />
+        <Services />
+
        </main>
        <Footer />
      </>
