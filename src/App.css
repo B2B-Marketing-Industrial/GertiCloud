@@ -20,3 +20,41 @@ body {
 .footer-link:hover {
   color: rgba(255, 255, 255, 1) !important;
 }
+
+/* Estilos da Seção Hero */
+.hero-section {
+  /* Um gradiente sutil usando as cores azul e roxo da marca */
+  background: linear-gradient(45deg, #0099cc, #5520ae);
+  /* O paddingTop aqui deve ser o mesmo do <main> para alinhar com o Header fixo */
+  padding-top: 120px; 
+  padding-bottom: 60px;
+}
+
+.hero-title {
+  font-size: 3.5rem; /* Tamanho grande para impacto */
+  font-weight: 700; /* Peso da fonte "Bold" da Montserrat */
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400; /* Peso "Regular" */
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Botão personalizado com o verde da marca */
+.btn-gerti-green {
+  background-color: #0df3aa !important; /* Cor verde da marca */
+  border-color: #0df3aa !important; /* Cor da borda */
+  color: #212529 !important; /* Texto escuro para contraste */
+  font-weight: 700;
+  padding: 0.8rem 2rem;
+  border-radius: 50px; /* Botão arredondado, seguindo a identidade visual de círculos */
+  transition: all 0.3s ease;
+}
+
+.btn-gerti-green:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

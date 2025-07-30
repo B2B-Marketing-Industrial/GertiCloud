@@ -42,7 +42,7 @@ const Footer = () => {
         {/* Seção de Copyright e Redes Sociais */}
         <Row className="d-flex align-items-center">
             <Col md={7} lg={8}>
-                <p className="text-center text-md-start">© 2025 Gerti Cloud. [cite_start]Todos os direitos reservados. [cite: 136, 137]</p>
+                <p className="text-center text-md-start">© 2025 Gerti Cloud.Todos os direitos reservados.</p>
             </Col>
             <Col md={5} lg={4} className="text-center text-md-end">
                  <a href="https://www.facebook.com/gertisolucoes" target="_blank" rel="noopener noreferrer" className="text-white me-4"><FaFacebook size={22}/></a>

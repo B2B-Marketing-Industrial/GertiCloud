@@ -11,9 +11,8 @@ function App() {
     <>
       <Header />
       <Hero />
-       <main style={{paddingTop: '76px' }}>
-       <h1>Página da GertiCloud</h1>
-      </main>
+       <main>
+       </main>
        <Footer />
      </>
   )
