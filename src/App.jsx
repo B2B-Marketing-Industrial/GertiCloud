@@ -5,6 +5,7 @@ import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Features from './components/Features.jsx';
 import Services from './components/Services.jsx';
+import WhyUs from './components/WhyUs.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
 
@@ -16,7 +17,7 @@ function App() {
        <main>
         <Features />
         <Services />
-
+         <WhyUs />
        </main>
        <Footer />
      </>
