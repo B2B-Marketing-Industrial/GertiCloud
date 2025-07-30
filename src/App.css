@@ -104,8 +104,31 @@ body {
   color: #ffffff; /* E o ícone em si fica branco */
 }
 
+.service-card-horizontal {
+  border: 1px solid transparent; /* Borda invisível por padrão */
+  border-radius: 15px;
+  background-color: #f8f9fa; /* Fundo igual ao da seção para parecer 'flutuante' */
+  box-shadow: none; /* Sem sombra por padrão */
+  transition: all 0.3s ease-in-out;
+}
 
+.service-card-horizontal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-color: #0df3aa; /* Borda fica VERDE (cor da marca) no hover */
+}
 
+.service-icon-wrapper {
+  flex-shrink: 0; /* Impede que o ícone encolha */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 10px; /* Um quadrado com cantos arredondados */
+  background-color: #e9ecef;
+  color: #5520ae; /* Ícone Roxo da marca */
+}
 
 /* Media Query para telas de tablet e celular (até 767.98px de largura) */
 @media (max-width: 767.98px) {
@@ -129,5 +152,18 @@ body {
   /* Ajusta o copyright e as redes sociais para ficarem centralizados também */
   .footer-gerti .text-md-start, .footer-gerti .text-md-end {
     text-align: center !important;
+
+}
+
+ /* Ajustes para os cards de serviço no mobile */
+  .service-card-horizontal .card-body {
+    flex-direction: column; /* Empilha os itens (ícone e texto) verticalmente */
+    text-align: center;   /* Centraliza tudo */
+  }
+
+  /* Ajusta o espaçamento do ícone no mobile */
+  .service-card-horizontal .service-icon-wrapper {
+    margin-right: 0 !important; /* Remove a margem direita do ícone */
+    margin-bottom: 1rem;       /* Adiciona uma margem abaixo do ícone */
   }
 }
