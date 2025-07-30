@@ -58,3 +58,76 @@ body {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
+
+/* Estilos da Seção Features/Diferenciais */
+.features-section {
+  background-color: #f8f9fa; /* Um cinza bem claro para destacar a seção */
+}
+
+.section-title {
+  font-weight: 700;
+  color: #343a40; /* Um cinza escuro para o título */
+  margin-bottom: 1rem;
+}
+
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Círculo, alinhado à identidade da marca */
+  background-color: #e9ecef; /* Fundo do ícone */
+  color: #0099cc; /* Cor do ícone - Azul da marca */
+  margin-bottom: 1.5rem;
+}
+
+/* Estilo para o card de cada diferencial */
+.feature-card {
+  padding: 2rem 1rem;
+  border-radius: 15px; /* Bordas arredondadas para suavizar */
+  background-color: transparent;
+  /* Transição suave para todas as propriedades */
+  transition: all 0.3s ease-in-out;
+}
+
+/* Efeito HOVER no card */
+.feature-card:hover {
+  transform: translateY(-5px); /* Efeito de "levantar" */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  background-color: rgba(13, 243, 170, 0.1); /* Verde da marca com 10% de opacidade */
+}
+
+/* Efeito HOVER no ícone (quando o mouse estiver no card) */
+.feature-card:hover .feature-icon {
+  background-color: #0099cc; /* Ícone fica com o fundo Azul da marca */
+  color: #ffffff; /* E o ícone em si fica branco */
+}
+
+
+
+
+/* Media Query para telas de tablet e celular (até 767.98px de largura) */
+@media (max-width: 767.98px) {
+
+  /* No mobile, o card já tem o estilo "destacado" por padrão */
+  .feature-card {
+    background-color: #ffffff; /* Fundo branco permanente */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra mais sutil */
+    border: 1px solid #e9ecef; /* Uma borda leve para definir o card */
+  }
+
+  /* No mobile, desativamos o efeito de "levantar" para evitar o toque "preso" */
+  .feature-card:hover {
+    transform: none;
+}
+
+ .footer-gerti .row > div {
+    text-align: center !important;
+  }
+
+  /* Ajusta o copyright e as redes sociais para ficarem centralizados também */
+  .footer-gerti .text-md-start, .footer-gerti .text-md-end {
+    text-align: center !important;
+  }
+}
