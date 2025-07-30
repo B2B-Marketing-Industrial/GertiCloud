@@ -130,6 +130,46 @@ body {
   color: #5520ae; /* Ícone Roxo da marca */
 }
 
+/* Estilos da Seção "Por que nos Escolher?" */
+.why-us-section {
+  background-color: #f8f9fa; /* Mantém o fundo cinza claro para alternar */
+}
+
+.why-us-accordion .accordion-item {
+  border: 1px solid #dee2e6;
+  border-radius: 10px !important; /* Arredondamento dos cantos */
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.why-us-accordion .accordion-header button {
+  font-weight: 500;
+  border-radius: 10px !important;
+  color: #343a40;
+}
+
+.why-us-accordion .accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(0, 153, 204, 0.25); /* Sombra de foco com o Azul da marca */
+}
+
+/* Estilo do botão do accordion QUANDO ABERTO */
+.why-us-accordion .accordion-button:not(.collapsed) {
+  background-color: #5520ae; /* Fundo Roxo da marca */
+  color: white;
+}
+
+.why-us-accordion .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.why-us-accordion .accordion-icon {
+  color: #0099cc; /* Ícones em Azul da marca */
+}
+
+.why-us-accordion .accordion-button:not(.collapsed) .accordion-icon {
+  color: white; /* Ícone fica branco quando o accordion está aberto */
+}
+
 /* Media Query para telas de tablet e celular (até 767.98px de largura) */
 @media (max-width: 767.98px) {
 
@@ -165,5 +205,10 @@ body {
   .service-card-horizontal .service-icon-wrapper {
     margin-right: 0 !important; /* Remove a margem direita do ícone */
     margin-bottom: 1rem;       /* Adiciona uma margem abaixo do ícone */
+  }
+
+   /* Ajuste para a seção 'Why Us' no mobile */
+  .why-us-section .text-lg-start {
+    text-align: center !important;
   }
 }
