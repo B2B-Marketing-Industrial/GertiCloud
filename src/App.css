@@ -202,7 +202,121 @@ body {
   color: var(--gerti-purple);
 }
 
-/* ... Media Query continua igual ... */
+/* ===== REFINAMENTO DO HEADER ===== */
+.header-gerti {
+  background-color: var(--gerti-white) !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07); /* Sombra suave para dar profundidade */
+}
+
+/* Estilo para os links de navegação */
+.header-gerti .nav-link {
+  font-weight: 500;
+  color: var(--gerti-dark-gray);
+  transition: color 0.2s ease-in-out;
+}
+
+.header-gerti .nav-link:hover {
+  color: var(--gerti-blue); /* Links ficam azuis no hover */
+}
+
+/* Estilo para o botão de CTA no Header */
+.header-gerti .btn-cta {
+  background-color: var(--gerti-blue);
+  border-color: var(--gerti-blue);
+  border-radius: 50px; /* Cantos arredondados */
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: var(--gerti-white);
+  transition: all 0.3s ease;
+  white-space: nowrap; /* PROÍBE a quebra de linha do texto no botão ficando apenas 1 linha*/
+}
+
+.header-gerti .btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Query para telas de tablet e celular (até 767.98px de largura) */
 @media (max-width: 767.98px) {
-  /* ... (regras responsivas) ... */
+
+  /* No mobile, o card já tem o estilo "destacado" por padrão */
+  .feature-card {
+    background-color: #ffffff; /* Fundo branco permanente */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra mais sutil */
+    border: 1px solid #e9ecef; /* Uma borda leve para definir o card */
+  }
+
+  /* No mobile, desativamos o efeito de "levantar" para evitar o toque "preso" */
+  .feature-card:hover {
+    transform: none;
+}
+
+ .footer-gerti .row > div {
+    text-align: center !important;
+  }
+
+  /* Ajusta o copyright e as redes sociais para ficarem centralizados também */
+  .footer-gerti .text-md-start, .footer-gerti .text-md-end {
+    text-align: center !important;
+
+}
+
+ /* Ajustes para os cards de serviço no mobile */
+  .service-card-horizontal .card-body {
+    flex-direction: column; /* Empilha os itens (ícone e texto) verticalmente */
+    text-align: center;   /* Centraliza tudo */
+  }
+
+  /* Ajusta o espaçamento do ícone no mobile */
+  .service-card-horizontal .service-icon-wrapper {
+    margin-right: 0 !important; /* Remove a margem direita do ícone */
+    margin-bottom: 1rem;       /* Adiciona uma margem abaixo do ícone */
+  }
+
+   /* Ajuste para a seção 'Why Us' no mobile */
+  .why-us-section .text-lg-start {
+    text-align: center !important;
+  }
+
+  /* Ajustes para o texto da seção HERO no mobile */
+  .hero-title {
+    font-size: 2.2rem; /* Reduz drasticamente o tamanho da fonte no mobile */
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem; /* Reduz também o subtítulo */
+  }
+
+  /* Ajuste para a IMAGEM da seção Público-Alvo no mobile */
+  .audience-image {
+    /* A imagem ocupará 90% da largura da tela, deixando um respiro */
+    width: 90%; 
+    /* A altura se ajustará automaticamente para manter a proporção da foto */
+    height: auto; 
+  }
+ 
+}
+
+/* Media Query para o menu mobile (telas menores que 992px) */
+@media (max-width: 991.98px) {
+
+  /* Centraliza os itens dentro do menu "hambúrguer" aberto */
+  .header-gerti .navbar-collapse {
+    text-align: center;
+    padding-top: 1rem; /* Adiciona um respiro no topo */
+  }
+
+  /* Adiciona um espaçamento vertical entre os links */
+  .header-gerti .navbar-nav .nav-link {
+    padding: 0.75rem 0;
+  }
+
+  /* Centraliza e estiliza o botão no menu mobile */
+  .header-gerti .navbar-collapse .btn-cta {
+    margin-top: 1rem; /* Adiciona um espaço acima do botão */
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%; /* Faz o botão não ocupar 100% da largura */
+  }
 }

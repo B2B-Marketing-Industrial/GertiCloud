@@ -6,11 +6,7 @@ import logoGerti from '../assets/logo-gerti.png';
 
 const Header = () => {
   return (
-    // expand="lg" faz o menu virar "hambúrguer" em telas médias e pequenas
-    // bg="light" define o fundo claro 
-    // fixed="top" mantém a navbar sempre visível no topo da página
-    // className="shadow-sm" adiciona uma sombra sutil para dar profundidade
-    <Navbar bg="light" expand="lg" fixed="top" className="shadow-sm">
+       <Navbar expand="lg" fixed="top" className="header-gerti">
       <Container>
         {/* Logo da Marca */}
         <Navbar.Brand href="#home">
@@ -18,23 +14,24 @@ const Header = () => {
             src={logoGerti}
             height="30" // Ajuste a altura conforme necessário
             className="d-inline-block align-top"
-            alt="Logo Gerti - Gestão de TI Inteligente"
+            alt="Logo Gerti"
           />
         </Navbar.Brand>
 
         {/* Botão "Hambúrguer" que aparece em telas pequenas */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        {/* Conteúdo do Menu que será colapsado */}
         <Navbar.Collapse id="basic-navbar-nav">
-          {/* ms-auto alinha os links à direita */}
-          <Nav className="ms-auto">
+          {/* Este Nav agora ocupa o espaço à esquerda */}
+
+          <Nav className="w-100 justify-content-center">
             <Nav.Link href="#planos">Planos</Nav.Link>
             <Nav.Link href="#diferenciais">Diferenciais</Nav.Link>
             <Nav.Link href="#faq">FAQ</Nav.Link>
-            {/*  componente Button para dar destaque ao CTA */}
-            <Button variant="primary" href="#contato">Fale com um Especialista</Button>
           </Nav>
+          
+          {/* O botão fica fora do Nav, permitindo que o me-auto o empurre para a direita */}
+          <Button href="#contato" className="btn-cta">Fale com um Especialista</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
