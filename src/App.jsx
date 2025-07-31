@@ -7,6 +7,8 @@ import Features from './components/Features.jsx';
 import Services from './components/Services.jsx';
 import WhyUs from './components/WhyUs.jsx';
 import TargetAudience from './components/TargetAudience.jsx';
+//import Pricing from './components/Pricing.jsx';
+import Faq from './components/Faq.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
 
@@ -20,6 +22,8 @@ function App() {
         <Services />
          <WhyUs />
          <TargetAudience />
+         {/* <Pricing /> */}
+           <Faq />
        </main>
        <Footer />
      </>
