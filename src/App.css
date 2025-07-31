@@ -1,5 +1,11 @@
 /* src/App.css - Nossos Estilos Globais */
 
+#root, .App {
+  /* Impede que o conteúdo "vaze" para os lados */
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   /* Define a fonte oficial da marca para toda a página */
   font-family: 'Montserrat', sans-serif;
@@ -170,6 +176,32 @@ body {
   color: white; /* Ícone fica branco quando o accordion está aberto */
 }
 
+/* Estilo para a imagem da seção de público-alvo */
+.audience-image {
+  width: 380px;  /* Largura fixa */
+  height: 420px; /* Altura fixa */
+  object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+   object-position: 50% 20%;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+* Estilo para a lista de público-alvo */
+.audience-list-item {
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.audience-list-item:hover {
+  background-color: rgba(13, 243, 170, 0.1); /* Fundo verdinho suave no hover */
+}
+
+/* O checkmark muda para o roxo da marca no hover */
+.audience-list-item:hover .audience-checkmark {
+  color: #5520ae; /* Roxo da marca */
+}
+
 /* Media Query para telas de tablet e celular (até 767.98px de largura) */
 @media (max-width: 767.98px) {
 
@@ -211,4 +243,22 @@ body {
   .why-us-section .text-lg-start {
     text-align: center !important;
   }
+
+  /* Ajustes para o texto da seção HERO no mobile */
+  .hero-title {
+    font-size: 2.2rem; /* Reduz drasticamente o tamanho da fonte no mobile */
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem; /* Reduz também o subtítulo */
+  }
+
+  /* Ajuste para a IMAGEM da seção Público-Alvo no mobile */
+  .audience-image {
+    /* A imagem ocupará 90% da largura da tela, deixando um respiro */
+    width: 90%; 
+    /* A altura se ajustará automaticamente para manter a proporção da foto */
+    height: auto; 
+  }
+ 
 }
