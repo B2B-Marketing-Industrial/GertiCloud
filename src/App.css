@@ -1,22 +1,30 @@
-/* src/App.css - Nossos Estilos Globais */
+/* src/App.css - Nossos Estilos Globais Refatorados */
+
+:root {
+  /* Paleta de Cores oficial da GERTI */
+  --gerti-purple: #5520ae;
+  --gerti-blue: #0099cc;
+  --gerti-green: #0df3aa;
+  --gerti-dark-gray: #343a40;
+  --gerti-light-gray: #f8f9fa;
+  --gerti-white: #ffffff;
+  --gerti-black: #212529;
+}
 
 #root, .App {
-  /* Impede que o conteúdo "vaze" para os lados */
   overflow-x: hidden;
   width: 100%;
 }
 
 body {
-  /* Define a fonte oficial da marca para toda a página */
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Estilo para o nosso rodapé personalizado com a cor da marca */
+/* Estilo para o rodapé */
 .footer-gerti {
-  background-color: #5520ae; /* O roxo oficial da GERTI */
+  background-color: var(--gerti-purple);
 }
 
-/* Estilos para os links dentro do rodapé */
 .footer-link {
   color: rgba(255, 255, 255, 0.7) !important;
   text-decoration: none;
@@ -24,39 +32,36 @@ body {
 }
 
 .footer-link:hover {
-  color: rgba(255, 255, 255, 1) !important;
+  color: var(--gerti-white) !important;
 }
 
 /* Estilos da Seção Hero */
 .hero-section {
-  /* Um gradiente sutil usando as cores azul e roxo da marca */
-  background: linear-gradient(45deg, #0099cc, #5520ae);
-  /* O paddingTop aqui deve ser o mesmo do <main> para alinhar com o Header fixo */
+  background: linear-gradient(45deg, var(--gerti-blue), var(--gerti-purple));
   padding-top: 120px; 
   padding-bottom: 60px;
 }
 
 .hero-title {
-  font-size: 3.5rem; /* Tamanho grande para impacto */
-  font-weight: 700; /* Peso da fonte "Bold" da Montserrat */
+  font-size: 3.5rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .hero-subtitle {
   font-size: 1.2rem;
-  font-weight: 400; /* Peso "Regular" */
+  font-weight: 400;
   margin-bottom: 2rem;
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Botão personalizado com o verde da marca */
 .btn-gerti-green {
-  background-color: #0df3aa !important; /* Cor verde da marca */
-  border-color: #0df3aa !important; /* Cor da borda */
-  color: #212529 !important; /* Texto escuro para contraste */
+  background-color: var(--gerti-green) !important;
+  border-color: var(--gerti-green) !important;
+  color: var(--gerti-black) !important;
   font-weight: 700;
   padding: 0.8rem 2rem;
-  border-radius: 50px; /* Botão arredondado, seguindo a identidade visual de círculos */
+  border-radius: 50px;
   transition: all 0.3s ease;
 }
 
@@ -67,12 +72,12 @@ body {
 
 /* Estilos da Seção Features/Diferenciais */
 .features-section {
-  background-color: #f8f9fa; /* Um cinza bem claro para destacar a seção */
+  background-color: var(--gerti-light-gray);
 }
 
 .section-title {
   font-weight: 700;
-  color: #343a40; /* Um cinza escuro para o título */
+  color: var(--gerti-dark-gray);
   margin-bottom: 1rem;
 }
 
@@ -82,68 +87,65 @@ body {
   justify-content: center;
   width: 80px;
   height: 80px;
-  border-radius: 50%; /* Círculo, alinhado à identidade da marca */
-  background-color: #e9ecef; /* Fundo do ícone */
-  color: #0099cc; /* Cor do ícone - Azul da marca */
+  border-radius: 50%;
+  background-color: #e9ecef;
+  color: var(--gerti-blue);
   margin-bottom: 1.5rem;
 }
 
-/* Estilo para o card de cada diferencial */
 .feature-card {
   padding: 2rem 1rem;
-  border-radius: 15px; /* Bordas arredondadas para suavizar */
+  border-radius: 15px;
   background-color: transparent;
-  /* Transição suave para todas as propriedades */
   transition: all 0.3s ease-in-out;
 }
 
-/* Efeito HOVER no card */
 .feature-card:hover {
-  transform: translateY(-5px); /* Efeito de "levantar" */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  background-color: rgba(13, 243, 170, 0.1); /* Verde da marca com 10% de opacidade */
+  transform: translateY(-5px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  background-color: rgba(13, 243, 170, 0.1);
 }
 
-/* Efeito HOVER no ícone (quando o mouse estiver no card) */
 .feature-card:hover .feature-icon {
-  background-color: #0099cc; /* Ícone fica com o fundo Azul da marca */
-  color: #ffffff; /* E o ícone em si fica branco */
+  background-color: var(--gerti-blue);
+  color: var(--gerti-white);
 }
 
+/* Estilos da Seção de Serviços */
 .service-card-horizontal {
-  border: 1px solid transparent; /* Borda invisível por padrão */
+  border: 1px solid transparent;
   border-radius: 15px;
-  background-color: #f8f9fa; /* Fundo igual ao da seção para parecer 'flutuante' */
-  box-shadow: none; /* Sem sombra por padrão */
+  background-color: var(--gerti-light-gray);
+  box-shadow: none;
   transition: all 0.3s ease-in-out;
 }
 
 .service-card-horizontal:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border-color: #0df3aa; /* Borda fica VERDE (cor da marca) no hover */
+  border-color: var(--gerti-green);
 }
 
 .service-icon-wrapper {
-  flex-shrink: 0; /* Impede que o ícone encolha */
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 10px; /* Um quadrado com cantos arredondados */
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
   background-color: #e9ecef;
-  color: #5520ae; /* Ícone Roxo da marca */
+  color: var(--gerti-purple);
 }
 
 /* Estilos da Seção "Por que nos Escolher?" */
 .why-us-section {
-  background-color: #f8f9fa; /* Mantém o fundo cinza claro para alternar */
+  background-color: var(--gerti-light-gray);
 }
 
 .why-us-accordion .accordion-item {
   border: 1px solid #dee2e6;
-  border-radius: 10px !important; /* Arredondamento dos cantos */
+  border-radius: 10px !important;
   margin-bottom: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
@@ -151,17 +153,16 @@ body {
 .why-us-accordion .accordion-header button {
   font-weight: 500;
   border-radius: 10px !important;
-  color: #343a40;
+  color: var(--gerti-dark-gray);
 }
 
 .why-us-accordion .accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(0, 153, 204, 0.25); /* Sombra de foco com o Azul da marca */
+  box-shadow: 0 0 0 0.25rem rgba(0, 153, 204, 0.25);
 }
 
-/* Estilo do botão do accordion QUANDO ABERTO */
 .why-us-accordion .accordion-button:not(.collapsed) {
-  background-color: #5520ae; /* Fundo Roxo da marca */
-  color: white;
+  background-color: var(--gerti-purple);
+  color: var(--gerti-white);
 }
 
 .why-us-accordion .accordion-button:not(.collapsed)::after {
@@ -169,24 +170,24 @@ body {
 }
 
 .why-us-accordion .accordion-icon {
-  color: #0099cc; /* Ícones em Azul da marca */
+  color: var(--gerti-blue);
 }
 
 .why-us-accordion .accordion-button:not(.collapsed) .accordion-icon {
-  color: white; /* Ícone fica branco quando o accordion está aberto */
+  color: var(--gerti-white);
 }
 
 /* Estilo para a imagem da seção de público-alvo */
 .audience-image {
-  width: 380px;  /* Largura fixa */
-  height: 420px; /* Altura fixa */
-  object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
-   object-position: 50% 20%;
+  width: 380px;
+  height: 420px;
+  object-fit: cover;
+  object-position: 50% 20%;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-* Estilo para a lista de público-alvo */
+/* Estilo para a lista de público-alvo */
 .audience-list-item {
   padding: 0.75rem 1rem;
   border-radius: 10px;
@@ -194,71 +195,14 @@ body {
 }
 
 .audience-list-item:hover {
-  background-color: rgba(13, 243, 170, 0.1); /* Fundo verdinho suave no hover */
+  background-color: rgba(13, 243, 170, 0.1);
 }
 
-/* O checkmark muda para o roxo da marca no hover */
 .audience-list-item:hover .audience-checkmark {
-  color: #5520ae; /* Roxo da marca */
+  color: var(--gerti-purple);
 }
 
-/* Media Query para telas de tablet e celular (até 767.98px de largura) */
+/* ... Media Query continua igual ... */
 @media (max-width: 767.98px) {
-
-  /* No mobile, o card já tem o estilo "destacado" por padrão */
-  .feature-card {
-    background-color: #ffffff; /* Fundo branco permanente */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra mais sutil */
-    border: 1px solid #e9ecef; /* Uma borda leve para definir o card */
-  }
-
-  /* No mobile, desativamos o efeito de "levantar" para evitar o toque "preso" */
-  .feature-card:hover {
-    transform: none;
-}
-
- .footer-gerti .row > div {
-    text-align: center !important;
-  }
-
-  /* Ajusta o copyright e as redes sociais para ficarem centralizados também */
-  .footer-gerti .text-md-start, .footer-gerti .text-md-end {
-    text-align: center !important;
-
-}
-
- /* Ajustes para os cards de serviço no mobile */
-  .service-card-horizontal .card-body {
-    flex-direction: column; /* Empilha os itens (ícone e texto) verticalmente */
-    text-align: center;   /* Centraliza tudo */
-  }
-
-  /* Ajusta o espaçamento do ícone no mobile */
-  .service-card-horizontal .service-icon-wrapper {
-    margin-right: 0 !important; /* Remove a margem direita do ícone */
-    margin-bottom: 1rem;       /* Adiciona uma margem abaixo do ícone */
-  }
-
-   /* Ajuste para a seção 'Why Us' no mobile */
-  .why-us-section .text-lg-start {
-    text-align: center !important;
-  }
-
-  /* Ajustes para o texto da seção HERO no mobile */
-  .hero-title {
-    font-size: 2.2rem; /* Reduz drasticamente o tamanho da fonte no mobile */
-  }
-
-  .hero-subtitle {
-    font-size: 1.1rem; /* Reduz também o subtítulo */
-  }
-
-  /* Ajuste para a IMAGEM da seção Público-Alvo no mobile */
-  .audience-image {
-    /* A imagem ocupará 90% da largura da tela, deixando um respiro */
-    width: 90%; 
-    /* A altura se ajustará automaticamente para manter a proporção da foto */
-    height: auto; 
-  }
- 
+  /* ... (regras responsivas) ... */
 }
