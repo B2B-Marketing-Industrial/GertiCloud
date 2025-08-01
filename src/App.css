@@ -268,6 +268,11 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Adiciona o cursor de ponteiro aos cards interativos */
+.feature-card, .service-card-horizontal {
+  cursor: pointer;
+}
+
 /* Media Query para telas de tablet e celular (até 767.98px de largura) */
 @media (max-width: 767.98px) {
 
