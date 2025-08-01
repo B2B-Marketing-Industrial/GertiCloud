@@ -1,6 +1,6 @@
 // src/App.jsx
 
-import React from 'react';
+import React, { useRef } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import Features from './components/Features.jsx';
@@ -13,17 +13,22 @@ import Footer from './components/Footer.jsx';
 import './App.css';
 
 function App() {
+
+    const ref_faq = useRef(null);
+    const ref_diferenciais = useRef(null);
+    const ref_planos = useRef(null);
+
   return (
     <>
-      <Header />
+      <Header ref_faq={ref_faq} ref_diferenciais={ref_diferenciais} ref_planos={ref_planos} />
       <Hero />
        <main>
         <Features />
         <Services />
-         <WhyUs />
+         <WhyUs ref_diferenciais={ref_diferenciais} />
          <TargetAudience />
          {/* <Pricing /> */}
-           <Faq />
+           <Faq ref_faq={ref_faq} />
        </main>
        <Footer />
      </>

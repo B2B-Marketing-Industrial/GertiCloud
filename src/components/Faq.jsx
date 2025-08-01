@@ -46,13 +46,13 @@ const faqData = [
   }
 ];
 
-const Faq = () => {
+function Faq(props) {
   const [activeCategory, setActiveCategory] = useState('Geral');
   const categories = [...new Set(faqData.map(item => item.category))];
   const filteredFaq = faqData.filter(item => item.category === activeCategory);
 
   return (
-    <section className="faq-section py-5">
+    <section className="faq-section py-5" ref={props.ref_faq}>
       <Container>
         <Row className="text-center mb-5">
           <Col>

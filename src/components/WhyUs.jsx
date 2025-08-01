@@ -29,9 +29,9 @@ const whyUsList = [
   }
 ];
 
-const WhyUs = () => {
+function WhyUs(props) {
   return (
-    <section className="why-us-section py-5">
+    <section className="why-us-section py-5" ref={props.ref_diferenciais}>
       <Container>
         <Row className="align-items-center">
           {/* Coluna do Título */}

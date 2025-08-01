@@ -1,26 +1,33 @@
 // src/components/Hero.jsx
 import React from 'react';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import heroImage from '../assets/hero-image.jpg'; 
+import { Container, Row, Col, Button, Image as BootstrapImage } from 'react-bootstrap';
 
 const Hero = () => {
-    return (
-    // Nossa classe de estilo personalizada para o fundo e alinhamento
-    <section className="hero-section text-center text-white">
-      <Container>
-        <Row className="justify-content-center">
-          <Col md={8}>
-            {/* Título principal da página */}
-            <h1 className="hero-title">Desempenho Máximo e Segurança Inabalável para Seu Negócio</h1>
+  return (
+    <section className="hero-section text-center">
+      {/* A imagem agora serve como fundo, controlada pelo CSS */}
+      <BootstrapImage src={heroImage} className="hero-background-image" alt="Fundo abstrato de nuvem tecnológica" />
+      {/* A camada de gradiente por cima da imagem */}
+      <div className="hero-overlay"></div>
 
-            {/* Subtítulo com os detalhes  */}
+      {/* O conteúdo de texto que fica na frente de tudo */}
+      <Container className="hero-content h-100">
+        <Row className="align-items-center justify-content-center h-100">
+          <Col md={10} lg={8}>
+            <h1 className="hero-title">Resolva em Minutos, não em Tickets.</h1>
             <p className="hero-subtitle">
-              Servidores Cloud com link de alta velocidade, 20 TB de Transferência e Proteção Anti-DDoS de 10 Gbps inclusa.
+              A nuvem de alta performance e segurança com o suporte em português que seu negócio realmente precisa. Rápido, sem pressão e em português.
+              Agende 15 minutos e descubra o plano ideal para você.
             </p>
-
-            {/* Botão de Chamada para Ação (CTA) */}
-            <Button href="#planos" size="lg" className="btn-gerti-green">
-              Experimente Agora Sem Compromisso
-            </Button>
+            <Button 
+            href="https://api.whatsapp.com/send/?phone=551139959564&text&type=phone_number&app_absent=0" 
+            className="btn-gerti-green"
+            target="_blank" // Para abrir em uma nova aba
+            rel="noopener noreferrer" // Boas práticas de segurança
+          >
+           Fale com um Especialista
+          </Button>
           </Col>
         </Row>
       </Container>
