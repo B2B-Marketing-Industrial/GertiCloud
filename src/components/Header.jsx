@@ -5,34 +5,39 @@ import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import logoGerti from '../assets/logo-gerti.png';
 
 function Header (props){
-
   return (
-       <Navbar expand="lg" fixed="top" className="header-gerti">
+    <Navbar expand="lg" fixed="top" className="header-gerti">
       <Container>
-        {/* Logo da Marca */}
-        <Navbar.Brand href="#home">
+        {/* MUDANÇA AQUI: Trocamos o href por onClick */}
+        <Navbar.Brand 
+          onClick={() => {props.ref_home.current.scrollIntoView({behavior: "smooth"})}}
+          style={{ cursor: 'pointer' }} // Adiciona a "mãozinha" do mouse
+        >
           <img
             src={logoGerti}
-            height="30" // Ajuste a altura conforme necessário
+            height="40"
             className="d-inline-block align-top"
             alt="Logo Gerti"
           />
         </Navbar.Brand>
 
-        {/* Botão "Hambúrguer" que aparece em telas pequenas */}
+        {/* O resto do seu Header continua igual */}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-
         <Navbar.Collapse id="basic-navbar-nav">
-          {/* Este Nav agora ocupa o espaço à esquerda */}
-
           <Nav className="w-100 justify-content-center">
             <Nav.Link onClick={() => {props.ref_planos.current.scrollIntoView({behavior: "smooth"})}}>Planos</Nav.Link>
             <Nav.Link onClick={() => {props.ref_diferenciais.current.scrollIntoView({behavior: "smooth"})}}>Diferenciais</Nav.Link>
             <Nav.Link onClick={() => {props.ref_faq.current.scrollIntoView({behavior: "smooth"})}}>FAQ</Nav.Link>
           </Nav>
-
-          {/* O botão fica fora do Nav, permitindo que o me-auto o empurre para a direita */}
-          <Button href="#contato" className="btn-cta">Fale com um Especialista</Button>
+          <Button 
+            href="https://api.whatsapp.com/send/?phone=551139959564&text&type=phone_number&app_absent=0" 
+            variant="outline-primary"
+            className="btn-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Converse com um Especialista
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
