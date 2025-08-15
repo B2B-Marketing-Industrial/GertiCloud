@@ -29,12 +29,13 @@ function App() {
       <section ref={ref_home}> <Hero /> </section>
       
       <main>
+        {/* ORDEM CORRIGIDA E FINAL */}
+        <TargetAudience />
         <section ref={ref_ideal_for}>
           <IdealFor />
         </section>
         <Services />
         <WhyUs />
-        <TargetAudience />
         <section ref={ref_planos}> {/* <Pricing /> */} </section>
         <section ref={ref_faq}> <Faq /> </section>
       </main>
