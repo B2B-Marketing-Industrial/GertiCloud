@@ -2,10 +2,8 @@
 import React, { useRef } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
-import IdealFor from './components/IdealFor.jsx'; 
-import Services from './components/Services.jsx';
-import WhyUs from './components/WhyUs.jsx';
 import TargetAudience from './components/TargetAudience.jsx';
+import WhyUs from './components/WhyUs.jsx';
 import Faq from './components/Faq.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
@@ -29,13 +27,10 @@ function App() {
       <section ref={ref_home}> <Hero /> </section>
       
       <main>
-        {/* ORDEM CORRIGIDA E FINAL */}
-        <TargetAudience />
         <section ref={ref_ideal_for}>
-          <IdealFor />
         </section>
-        <Services />
-        <WhyUs />
+        <TargetAudience />
+          <WhyUs />
         <section ref={ref_planos}> {/* <Pricing /> */} </section>
         <section ref={ref_faq}> <Faq /> </section>
       </main>
