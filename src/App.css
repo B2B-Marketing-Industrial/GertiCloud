@@ -273,6 +273,45 @@ body {
   cursor: pointer;
 }
 
+/* Estilos para a nova seção Benefits (TEMA VERDE) */
+.benefits-section {
+  background-color: var(--gerti-green); /* Fundo verde da marca */
+}
+
+/* No tema verde, o título da seção precisa ser escuro para o contraste */
+.benefits-section .section-title {
+  color: var(--gerti-dark-gray);
+}
+
+.benefit-card {
+  background-color: var(--gerti-white); /* Fundo do card branco para se destacar */
+  border: none;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+.benefit-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--gerti-purple);
+  color: var(--gerti-white);
+  flex-shrink: 0;
+}
+
+.benefit-card .list-group-item {
+  font-size: 0.95rem;
+}
+
 /* Media Query para telas de tablet e celular (até 767.98px de largura) */
 @media (max-width: 767.98px) {
 

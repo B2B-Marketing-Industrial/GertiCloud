@@ -3,16 +3,18 @@ import React, { useRef } from 'react';
 import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import TargetAudience from './components/TargetAudience.jsx';
+import Benefits from './components/Benefits.jsx';
 import WhyUs from './components/WhyUs.jsx';
 import Faq from './components/Faq.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
 
 function App() {
-  // A CORREÇÃO ESTÁ AQUI: Adicionamos a criação da ref que faltava
+
   const ref_home = useRef(null);
   const ref_faq = useRef(null);
   const ref_ideal_for = useRef(null); 
+  const ref_benefits = useRef(null);
   const ref_planos = useRef(null);
 
   return (
@@ -20,7 +22,8 @@ function App() {
       <Header 
         ref_home={ref_home}
         ref_planos={ref_planos}
-        ref_ideal_for={ref_ideal_for} // Agora esta variável existe
+        ref_ideal_for={ref_ideal_for} 
+        ref_benefits={ref_benefits}
         ref_faq={ref_faq}
       />
       
@@ -30,6 +33,9 @@ function App() {
         <section ref={ref_ideal_for}>
         </section>
         <TargetAudience />
+         <section ref={ref_benefits}>
+          <Benefits />
+         </section>
           <WhyUs />
         <section ref={ref_planos}> {/* <Pricing /> */} </section>
         <section ref={ref_faq}> <Faq /> </section>
