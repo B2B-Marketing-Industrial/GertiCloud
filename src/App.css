@@ -61,7 +61,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(45deg, rgba(0, 153, 204, 0.7), rgba(85, 32, 174, 0.7)); /* Reduzi um pouco a opacidade para a imagem aparecer mais */
+  background: linear-gradient(45deg, rgba(0, 153, 204, 0.7), rgba(85, 32, 174, 0.7));
   z-index: 2; /* Camada 2: Fica entre a imagem e o texto */
 }
 
@@ -96,7 +96,7 @@ body {
 }
 
 .btn-gerti-green:hover {
-  filter: brightness(1.1); /* Apenas aumenta o brilho da cor original */
+  filter: brightness(1.1);
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -169,45 +169,6 @@ body {
   color: var(--gerti-purple);
 }
 
-/* Estilos da Seção "Por que nos Escolher?" */
-.why-us-section {
-  background-color: var(--gerti-light-gray);
-}
-
-.why-us-accordion .accordion-item {
-  border: 1px solid #dee2e6;
-  border-radius: 10px !important;
-  margin-bottom: 1rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-.why-us-accordion .accordion-header button {
-  font-weight: 500;
-  border-radius: 10px !important;
-  color: var(--gerti-dark-gray);
-}
-
-.why-us-accordion .accordion-button:focus {
-  box-shadow: 0 0 0 0.25rem rgba(0, 153, 204, 0.25);
-}
-
-.why-us-accordion .accordion-button:not(.collapsed) {
-  background-color: var(--gerti-purple);
-  color: var(--gerti-white);
-}
-
-.why-us-accordion .accordion-button:not(.collapsed)::after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-}
-
-.why-us-accordion .accordion-icon {
-  color: var(--gerti-blue);
-}
-
-.why-us-accordion .accordion-button:not(.collapsed) .accordion-icon {
-  color: var(--gerti-white);
-}
-
 /* Estilo para a imagem da seção de público-alvo */
 .audience-image {
   width: 380px;
@@ -236,7 +197,7 @@ body {
 /* ===== REFINAMENTO DO HEADER ===== */
 .header-gerti {
   background-color: var(--gerti-white) !important;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07); /* Sombra suave para dar profundidade */
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
 }
 
 /* Estilo para os links de navegação */
@@ -247,20 +208,20 @@ body {
 }
 
 .header-gerti .nav-link:hover {
-  color: var(--gerti-blue); /* Links ficam azuis no hover */
+  color: var(--gerti-blue);
 }
 
 /* Estilo para o botão de CTA no Header */
 .header-gerti .btn-cta {
   background-color: var(--gerti-white);
   border-color: var(--gerti-blue);
-  border-radius: 10px; /* Cantos arredondados */
+  border-radius: 10px;
   font-weight: 500;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   color: var(--gerti-blue);
   transition: all 0.3s ease;
-  white-space: nowrap; /* PROÍBE a quebra de linha do texto no botão ficando apenas 1 linha*/
+  white-space: nowrap;
 }
 
 .header-gerti .btn-cta:hover {
@@ -275,16 +236,15 @@ body {
 
 /* Estilos para a nova seção Benefits (TEMA VERDE) */
 .benefits-section {
-  background-color: var(--gerti-green); /* Fundo verde da marca */
+  background-color: var(--gerti-green);
 }
 
-/* No tema verde, o título da seção precisa ser escuro para o contraste */
 .benefits-section .section-title {
   color: var(--gerti-dark-gray);
 }
 
 .benefit-card {
-  background-color: var(--gerti-white); /* Fundo do card branco para se destacar */
+  background-color: var(--gerti-white);
   border: none;
   border-radius: 15px;
   transition: all 0.3s ease;
@@ -312,94 +272,278 @@ body {
   font-size: 0.95rem;
 }
 
+/* ===== Timeline (Suporte) ===== */
+.support-process-section {
+  background-color: var(--gerti-light-gray);
+}
+
+/* layout base */
+.timeline {
+  position: relative;
+}
+
+/* ===== TIMELINE — HORIZONTAL (md+) ===== */
+.timeline--horizontal {
+  --pad-top: 40px;
+  --dot-y: 0.1px;
+  --card-offset: 134px;
+
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding-top: var(--pad-top);
+}
+
+.timeline--horizontal::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--pad-top) + var(--dot-y));
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gerti-light-gray);
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.timeline--horizontal .timeline-step {
+  position: relative;
+  flex: 1 1 0;
+  background: var(--gerti-white);
+  border: 1px solid var(--gerti-purple);
+  border-radius: 12px;
+  padding: 1.25rem 1rem 1rem 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  z-index: 1;
+}
+
+.timeline--horizontal .timeline-dot {
+  position: absolute;
+  top: var(--dot-y);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: var(--gerti-blue);
+  color: var(--gerti-white);
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  border: 4px solid var(--gerti-white);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.timeline--horizontal .timeline-title {
+  font-weight: 700;
+  color: var(--gerti-dark-gray);
+  margin-top: 16px;
+  margin-bottom: 6px;
+}
+.timeline--horizontal .timeline-text {
+  color: #5f6368;
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+/* ===== TIMELINE — VERTICAL (mobile) ===== */
+.timeline--vertical {
+  position: relative;
+  padding: 10px 0 10px 0;
+}
+
+.timeline--vertical::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12px;
+  width: 4px;
+  height: 100%;
+  background: #e9ecef;
+  border-radius: 2px;
+}
+
+.timeline--vertical .timeline-item {
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  padding-left: 76px;
+  margin-bottom: 1.25rem;
+}
+
+.timeline--vertical .timeline-icon {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--gerti-blue);
+  color: var(--gerti-white);
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+  border: 4px solid var(--gerti-light-gray);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.timeline--vertical .timeline-content {
+  background: var(--gerti-white);
+  border: 1px solid var(--gerti-purple);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* ===== Trust Section (Confiança e Quebra de Objeções) ===== */
+.trust-section { background-color: var(--gerti-light-gray); }
+
+/* GRID:
+   desktop = [text | photo] / [accordion | photo]
+   mobile  = [text] → [photo] → [accordion] */
+.trust-grid {
+  display: grid;
+  gap: 1.25rem;
+  align-items: start;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "text"
+    "photo"
+    "accordion";
+}
+
+.trust-area-text { grid-area: text; }
+.trust-area-photo { grid-area: photo; text-align: center; }
+.trust-area-accordion { grid-area: accordion; }
+
+@media (min-width: 992px){
+  .trust-grid{
+    gap: 1.5rem 2rem;
+    grid-template-columns: minmax(0, 1fr) 420px; /* esquerda flexível | direita fixa */
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "text photo"
+      "accordion photo";
+  }
+  .trust-area-text { text-align: left; }
+}
+
+.trust-portrait{
+  width: 100%;
+  max-width: 300px;
+  /* proporção mais alta para retrato */
+  aspect-ratio: 2 / 2.8;
+  object-fit: cover;
+  /* sobe um pouco o enquadramento pro rosto caber melhor */
+  object-position: 50% 20%;
+  border-radius: 18px;
+  border: 3px solid color-mix(in srgb, var(--gerti-purple) 15%, transparent);
+  margin-inline: auto;
+}
+
+
+@media (max-width: 991.98px){
+  .trust-portrait{
+    max-width: 320px;
+    aspect-ratio: 2 / 3;
+    object-position: 50% 20%;
+  }
+}
+
+.trust-accordion .accordion-item{
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,.05);
+  margin-bottom: 12px;
+}
+
+.trust-accordion .accordion-header .accordion-button{
+  gap: .5rem;
+  padding: 1rem 1.25rem;
+}
+
+.trust-accordion .accordion-header .accordion-button .accordion-icon svg{
+  font-size: 1.1rem;
+  color: var(--gerti-purple);
+}
+
+.trust-accordion .accordion-button:not(.collapsed){
+  color: #111;
+  background: color-mix(in srgb, var(--gerti-blue) 6%, white);
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.04);
+}
+
+.trust-accordion .accordion-body{
+  font-size: .98rem;
+  line-height: 1.6;
+}
+
 /* Media Query para telas de tablet e celular (até 767.98px de largura) */
 @media (max-width: 767.98px) {
-
-  /* No mobile, o card já tem o estilo "destacado" por padrão */
   .feature-card {
-    background-color: #ffffff; /* Fundo branco permanente */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Sombra mais sutil */
-    border: 1px solid #e9ecef; /* Uma borda leve para definir o card */
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e9ecef;
   }
 
-  /* No mobile, desativamos o efeito de "levantar" para evitar o toque "preso" */
-  .feature-card:hover {
-    transform: none;
-}
+  .feature-card:hover { transform: none; }
 
- .footer-gerti .row > div {
-    text-align: center !important;
-  }
+  .footer-gerti .row > div { text-align: center !important; }
 
-  /* Ajusta o copyright e as redes sociais para ficarem centralizados também */
-  .footer-gerti .text-md-start, .footer-gerti .text-md-end {
-    text-align: center !important;
+  .footer-gerti .text-md-start,
+  .footer-gerti .text-md-end { text-align: center !important; }
 
-}
-
- /* Ajustes para os cards de serviço no mobile */
   .service-card-horizontal .card-body {
-    flex-direction: column; /* Empilha os itens (ícone e texto) verticalmente */
-    text-align: center;   /* Centraliza tudo */
+    flex-direction: column;
+    text-align: center;
   }
-
-  /* Ajusta o espaçamento do ícone no mobile */
   .service-card-horizontal .service-icon-wrapper {
-    margin-right: 0 !important; /* Remove a margem direita do ícone */
-    margin-bottom: 1rem;       /* Adiciona uma margem abaixo do ícone */
+    margin-right: 0 !important;
+    margin-bottom: 1rem;
   }
 
-   /* Ajuste para a seção 'Why Us' no mobile */
-  .why-us-section .text-lg-start {
-    text-align: center !important;
+  /* HERO mobile */
+  .hero-title { font-size: 2.2rem; }
+  .hero-subtitle { font-size: 1.1rem; }
+  .hero-section {
+    padding-top: 80px !important;
+    padding-bottom: 60px !important;
+    min-height: auto;
   }
 
-  /* Ajustes para o texto da seção HERO no mobile */
-  .hero-title {
-    font-size: 2.2rem; /* Reduz drasticamente o tamanho da fonte no mobile */
-  }
+  .audience-image { width: 90%; height: auto; }
 
-  .hero-subtitle {
-    font-size: 1.1rem; /* Reduz também o subtítulo */
-  }
-
-  /* AJUSTE PARA O PADDING DO HERO NO MOBILE */
-.hero-section {
-  padding-top: 80px !important;
-  padding-bottom: 60px !important;
-  min-height: auto; /* Remove a altura mínima para um encaixe natural */
+  /* ajustes da timeline vertical */
+  .timeline--vertical::before { left: 24px; }
+  .timeline--vertical .timeline-item { padding-left: 64px; }
+  .timeline--vertical .timeline-icon { left: 0; }
 }
-
-  /* Ajuste para a IMAGEM da seção Público-Alvo no mobile */
-  .audience-image {
-    /* A imagem ocupará 90% da largura da tela, deixando um respiro */
-    width: 90%; 
-    /* A altura se ajustará automaticamente para manter a proporção da foto */
-    height: auto; 
-  }
- 
-}
-
 
 /* Media Query para o menu mobile (telas menores que 992px) */
 @media (max-width: 991.98px) {
-
-  /* Centraliza os itens dentro do menu "hambúrguer" aberto */
   .header-gerti .navbar-collapse {
     text-align: center;
-    padding-top: 1rem; /* Adiciona um respiro no topo */
+    padding-top: 1rem;
   }
-
-  /* Adiciona um espaçamento vertical entre os links */
   .header-gerti .navbar-nav .nav-link {
     padding: 0.75rem 0;
   }
-
-  /* Centraliza e estiliza o botão no menu mobile */
   .header-gerti .navbar-collapse .btn-cta {
-    margin-top: 1rem; /* Adiciona um espaço acima do botão */
+    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
-    width: 75%; /* Faz o botão não ocupar 100% da largura */
+    width: 75%;
+  }
+}
+
+/* ---------- Ajustes finos ---------- */
+@media (min-width: 1200px) {
+  .timeline--horizontal { gap: 2.5rem; }
+  .timeline--horizontal .timeline-connector {
+    right: -1.25rem;
+    width: 2.5rem;
   }
 }
