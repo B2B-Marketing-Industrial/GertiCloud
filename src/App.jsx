@@ -4,7 +4,9 @@ import Header from './components/Header.jsx';
 import Hero from './components/Hero.jsx';
 import TargetAudience from './components/TargetAudience.jsx';
 import Benefits from './components/Benefits.jsx';
-import WhyUs from './components/WhyUs.jsx';
+import SupportProcess from './components/SupportProcess.jsx';
+import Pricing from './components/Pricing.jsx';
+import TrustSection from './components/TrustSection.jsx';
 import Faq from './components/Faq.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
@@ -36,7 +38,11 @@ function App() {
          <section ref={ref_benefits}>
           <Benefits />
          </section>
-          <WhyUs />
+         <SupportProcess />
+         <section ref={ref_planos}>
+  <Pricing />
+</section>
+          <TrustSection />
         <section ref={ref_planos}> {/* <Pricing /> */} </section>
         <section ref={ref_faq}> <Faq /> </section>
       </main>
