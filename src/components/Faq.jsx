@@ -1,88 +1,66 @@
 // src/components/Faq.jsx
-import React, { useState } from 'react';
-import { Container, Row, Col, Accordion, ListGroup } from 'react-bootstrap';
+import React from "react";
+import { Container, Row, Col, Accordion } from "react-bootstrap";
+// use "@/..." só se seu alias estiver configurado em vite/jsconfig/tsconfig
+import cloudFaq from "../assets/cloud-faq.svg"; 
 
-// Conteúdo oficial do documento, agora organizado em categorias
-const faqData = [
-  { 
-    category: 'Geral', 
-    q: 'O que é computação em nuvem?', 
-    a: 'Computação em nuvem é a entrega de serviços de computação, como servidores, armazenamento, bancos de dados e software, pela internet. Isso permite acesso flexível a recursos de TI sem a necessidade de infraestrutura física própria.' //
+const faqs = [
+  {
+    q: 'O que significa "suporte em 5 minutos" na prática?',
+    a: 'Significa que ao acionar nosso canal de suporte prioritário (chat ou telefone), um especialista técnico real, que fala português, irá iniciar o atendimento com você em menos de 5 minutos. Nada de longas filas de espera ou robôs.'
   },
-  { 
-    category: 'Geral', 
-    q: 'Quais os benefícios de utilizar serviços de nuvem?', 
-    a: 'Os principais benefícios incluem escalabilidade para ajustar recursos conforme a demanda, economia de custos com hardware e manutenção, acessibilidade de qualquer lugar e segurança avançada.' //
+  {
+    q: 'Como a Gerti consegue ser até 40% mais barata que a AWS ou Google?',
+    a: 'Nossa estrutura é otimizada para o mercado brasileiro. Não temos os mesmos custos operacionais globais e não repassamos a variação do dólar para você. O resultado é um preço final mais justo e previsível, sem sacrificar a qualidade.'
   },
-  { 
-    category: 'Recursos', 
-    q: 'É possível personalizar os recursos para meu negócio?', 
-    a: 'Sim, os serviços de nuvem oferecem total flexibilidade para personalizar recursos como capacidade de processamento, armazenamento e largura de banda, adaptando as soluções às necessidades específicas da sua empresa.' //
+  {
+    q: 'Não tenho uma equipe de DevOps. A Gerti Cloud é para mim?',
+    a: 'Sim, com certeza. Nossa plataforma foi desenhada para ser intuitiva. E para tudo aquilo que você não souber ou não quiser fazer, nosso time de suporte atua como uma extensão da sua equipe, te ajudando a configurar e gerenciar sua infraestrutura.'
   },
-  { 
-    category: 'Recursos', 
-    q: 'Posso integrar serviços de nuvem com minha infraestrutura existente?', 
-    a: 'Sim, é possível criar uma arquitetura híbrida que combine recursos de nuvem com sua infraestrutura local, permitindo uma integração que atenda às suas necessidades.' //
+  {
+    q: 'Como funciona a migração na prática?',
+    a: 'Primeiro, fazemos uma análise gratuita da sua estrutura atual. Depois, montamos um plano de migração detalhado. Por fim, nossa equipe acompanha ou executa a migração em conjunto com você, em um horário agendado para minimizar qualquer impacto na sua operação.'
   },
-  { 
-    category: 'Segurança', 
-    q: 'Como a segurança dos meus dados é garantida?', 
-    a: 'Implementamos medidas robustas de segurança, incluindo criptografia de dados, firewalls, controles de acesso rigorosos e monitoramento contínuo para proteger as informações armazenadas.' //
+  {
+    q: 'O que acontece se meu negócio crescer muito rápido?',
+    a: 'Isso é ótimo! Nossa infraestrutura é feita para escalar. Você pode aumentar seus recursos com poucos cliques ou através da nossa API. E o mais importante: nosso time te ajudará a planejar esse crescimento de forma inteligente e com custos controlados.'
   },
-  { 
-    category: 'Segurança', 
-    q: 'O que acontece com meus dados se houver uma falha?', 
-    a: 'Provedores de nuvem implementam redundância e backups regulares para garantir a disponibilidade e integridade dos dados, mesmo em caso de falhas de hardware ou outros incidentes.' //
-  },
-  { 
-    category: 'Faturamento', 
-    q: 'Como funciona a cobrança pelos serviços?', 
-    a: 'A maioria dos provedores adota um modelo de pagamento conforme o uso, onde você paga apenas pelos recursos consumidos. Na GERTI, focamos em planos com previsibilidade e faturamento em Reais para que você não tenha surpresas.' //
-  },
-  { 
-    category: 'Migração', 
-    q: 'Como é o processo de migração para a nuvem?', 
-    a: 'A migração envolve a transferência de dados e aplicações para a infraestrutura de nuvem. Recomendamos um planejamento detalhado e oferecemos suporte de especialistas para assegurar uma transição suave e sem interrupções.' //
-  }
 ];
 
-function Faq(props) {
-  const [activeCategory, setActiveCategory] = useState('Geral');
-  const categories = [...new Set(faqData.map(item => item.category))];
-  const filteredFaq = faqData.filter(item => item.category === activeCategory);
-
+export default function Faq({ ref_faq }) {
   return (
-    <section className="faq-section py-5" ref={props.ref_faq}>
+    <section className="faq-opt py-5" ref={ref_faq}>
       <Container>
-        <Row className="text-center mb-5">
-          <Col>
-            <h2 className="section-title">Ainda com dúvidas?</h2>
-            <p className="lead text-muted">Confira as perguntas mais comuns que separamos para você.</p>
+        <Row className="align-items-center g-4 g-lg-5">
+          {/* Ilustração à esquerda (no mobile vem primeiro) */}
+          <Col lg={5} className="order-1 order-lg-0">
+            <figure className="faq-illu-card">
+              <img
+                src={cloudFaq}
+                alt="Ilustração de cloud e suporte humano — FAQ Gerti Cloud"
+                className="faq-illu-img"
+                width="560"
+                height="420"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
           </Col>
-        </Row>
-        <Row>
-          <Col md={4} lg={3} className="mb-4 mb-md-0">
-            <ListGroup>
-              {categories.map(category => (
-                <ListGroup.Item 
-                  key={category} 
-                  action 
-                  active={activeCategory === category}
-                  onClick={() => setActiveCategory(category)}
-                  className="fw-bold"
-                >
-                  {category}
-                </ListGroup.Item>
-              ))}
-            </ListGroup>
-          </Col>
-          <Col md={8} lg={9}>
-            <Accordion defaultActiveKey="0">
-              {filteredFaq.map((item, index) => (
-                  <Accordion.Item eventKey={index.toString()} key={index}>
-                    <Accordion.Header>{item.q}</Accordion.Header>
-                    <Accordion.Body>{item.a}</Accordion.Body>
-                  </Accordion.Item>
+
+          {/* Texto + acordeão à direita */}
+          <Col lg={7}>
+            <span className="faq-eyebrow">FAQ</span>
+            <h2 className="faq-title">Perguntas que realmente importam</h2>
+            <p className="faq-subtitle">
+              Se não encontrar sua resposta, fale com a gente e resolvemos em minutos.
+            </p>
+
+            <Accordion defaultActiveKey="0" className="faq-accordion">
+              {faqs.map((item, i) => (
+                <Accordion.Item eventKey={String(i)} key={i}>
+                  <Accordion.Header>{item.q}</Accordion.Header>
+                  <Accordion.Body>{item.a}</Accordion.Body>
+                </Accordion.Item>
               ))}
             </Accordion>
           </Col>
@@ -90,6 +68,4 @@ function Faq(props) {
       </Container>
     </section>
   );
-};
-
-export default Faq;
+}
