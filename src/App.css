@@ -418,6 +418,148 @@ body {
 .trust-area-photo { grid-area: photo; text-align: center; }
 .trust-area-accordion { grid-area: accordion; }
 
+/* ===== Final CTA ===== */
+.cta-final-section {
+  background:
+    radial-gradient(1200px 600px at 100% 0%, color-mix(in srgb, var(--gerti-blue) 20%, transparent) 0%, transparent 70%),
+    radial-gradient(900px 450px at 0% 100%, color-mix(in srgb, var(--gerti-purple) 18%, transparent) 0%, transparent 70%),
+    var(--gerti-light-gray);
+}
+
+.cta-final-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.98));
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 18px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.08);
+  backdrop-filter: blur(4px);
+}
+
+.cta-title {
+  color: var(--gerti-dark-gray);
+  font-weight: 700;
+}
+
+.cta-subtitle {
+  color: #5f6368;
+  max-width: 62ch;
+}
+
+.cta-badge {
+  display: inline-block;
+  font-weight: 600;
+  font-size: .85rem;
+  color: var(--gerti-dark-gray);
+  background: color-mix(in srgb, var(--gerti-green) 30%, white);
+  border: 1px solid color-mix(in srgb, var(--gerti-green) 55%, transparent);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+}
+
+/* ===== Final CTA ===== */
+.final-cta {
+  padding: 80px 0;
+  /* mantém o fundo escuro da seção com a paleta GERTI */
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--gerti-purple) 70%, #000 30%),
+    color-mix(in srgb, var(--gerti-blue) 70%, #000 30%)
+  );
+}
+
+.final-cta .cta-card {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  /* >>> cartão branco com sombra suave */
+  background: var(--gerti-white);
+  color: var(--gerti-black);
+  border: 1px solid #e9ecef;
+  border-radius: 18px;
+  padding: 44px 36px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* selo “Consultoria gratuita” bem leve, na paleta */
+.final-cta .cta-eyebrow {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: rgba(13, 243, 170, 0.18);           /* verde leve */
+  color: var(--gerti-dark-gray);
+  border: 1px solid rgba(13, 243, 170, 0.35);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.final-cta .cta-title{
+  font-weight: 750;
+  color: var(--gerti-dark-gray);
+  margin: 10px 0 12px;
+  font-size: clamp(26px, 2.6vw + 10px, 36px);
+  letter-spacing: -0.02em;
+}
+
+.final-cta .cta-subtitle{
+  max-width: 720px;
+  margin: 0 auto 22px;
+  color: #5f6368;
+  line-height: 1.6;
+}
+
+.final-cta .cta-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--gerti-green);
+  color: #0b3b2e;               /* melhor contraste no verde */
+  font-weight: 800;
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 2px solid var(--gerti-green);
+  box-shadow: 0 8px 18px rgba(13,243,170,.25);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.final-cta .cta-btn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(13,243,170,.32);
+}
+
+.final-cta .cta-footnote{
+  display: inline-block;
+  margin-top: 14px;
+  font-size: .85rem;
+  color: #44505a;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--gerti-green) 8%, white 92%);
+  border: 1px solid color-mix(in srgb, var(--gerti-green) 22%, white 78%);
+}
+
+.final-cta .cta-badge{
+  display:inline-block;
+  font-weight: 600;
+  font-size: .9rem;
+  color: var(--gerti-dark-gray);
+  background: color-mix(in srgb, var(--gerti-green) 14%, white 86%);
+  border: 1px solid color-mix(in srgb, var(--gerti-green) 28%, white 72%);
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+/* Responsivo */
+@media (max-width: 767.98px) {
+  .final-cta { padding: 56px 0; }
+  .final-cta .cta-title { font-size: 1.75rem; }
+}
+
+
+@media (max-width: 575.98px) {
+  .cta-title { font-size: 1.6rem; }
+}
+
+
 @media (min-width: 992px){
   .trust-grid{
     gap: 1.5rem 2rem;
