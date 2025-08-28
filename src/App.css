@@ -652,6 +652,11 @@ body {
   color: var(--gerti-green); /* Cor verde da sua paleta */
   font-weight: 700;         /* Equivalente a negrito (bold) */
   font-size: 1.1rem;        /* Um pouco maior para dar destaque */
+
+}
+
+.pricing-section-bg {
+  background: linear-gradient(180deg, var(--gerti-white) 0%, #f0f2f5 100%);
 }
 
 @media (min-width: 992px) {
