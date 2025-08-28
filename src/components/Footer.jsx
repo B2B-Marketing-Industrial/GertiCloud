@@ -1,59 +1,108 @@
 // src/components/Footer.jsx
-import React from 'react';
-import { Container, Row, Col, Nav } from 'react-bootstrap';
-import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import React from "react";
+import { Container, Row, Col, Nav } from "react-bootstrap";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
-const Footer = () => {
+const quickLinks = [
+  { href: "#planos", text: "Planos" },
+  { href: "#diferenciais", text: "Diferenciais" },
+  { href: "#faq", text: "FAQ" },
+];
+
+const legalLinks = [
+  { href: "/termos", text: "Termos de Uso" },
+  { href: "/privacidade", text: "Política de Privacidade" },
+];
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
-    
     <footer className="footer-gerti text-white pt-5 pb-4">
       <Container>
-        <Row>
-          {/* Coluna da Marca */}
-          <Col md={3} lg={4} xl={3} className="mx-auto mb-4">
-            <h6 className="text-uppercase fw-bold">GERTI Cloud</h6>
-            <hr className="mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px', backgroundColor: '#0df3aa', height: '2px' }} />
-            <p>
-              Especialistas em soluções de computação em nuvem, oferecendo servidores de alta performance e segurança inabalável.
+        {/* GRID SUPERIOR COM ALINHAMENTO SIMÉTRICO (4-4-4) */}
+        <Row className="gy-4 justify-content-center">
+          
+          {/* Coluna 1: Marca e Descrição */}
+          <Col md={4} lg={3}>
+            <h6 className="text-uppercase fw-bold footer-title-green">GERTI Cloud</h6>
+            <hr className="footer-underline" />
+            <p style={{ opacity: 0.9 }}>
+              Especialistas em soluções de  <br />computação
+              em nuvem, oferecendo   <br />servidores de alta performance  <br /> e segurança
+              inabalável.
             </p>
           </Col>
 
-          {/* Coluna de Links Rápidos */}
-          <Col md={2} lg={2} xl={2} className="mx-auto mb-4">
-            <h6 className="text-uppercase fw-bold">Links Rápidos</h6>
-            <hr className="mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px', backgroundColor: '#0df3aa', height: '2px' }} />
-            <Nav className="flex-column">
-              <Nav.Link href="#planos" className="footer-link">Planos</Nav.Link>
-              <Nav.Link href="#diferenciais" className="footer-link">Diferenciais</Nav.Link>
-              <Nav.Link href="#faq" className="footer-link">FAQ</Nav.Link>
-            </Nav>
+          {/* Coluna 2: Links Agrupados */}
+          <Col md={4} lg={3}>
+            <Row>
+              <Col xs={7} lg={7}>
+                <h6 className="text-uppercase fw-bold footer-title-green">Links Rápidos</h6>
+                <hr className="footer-underline" />
+                <Nav className="flex-column">
+                  {quickLinks.map((link) => (
+                    <Nav.Link key={link.text} href={link.href} className="footer-link p-0 mb-2">
+                      {link.text}
+                    </Nav.Link>
+                  ))}
+                </Nav>
+              </Col>
+              <Col xs={4} lg={4}>
+                <h6 className="text-uppercase fw-bold footer-title-green">Legal</h6>
+                <hr className="footer-underline" />
+                <Nav className="flex-column">
+                  {legalLinks.map((link) => (
+                    <Nav.Link key={link.text} href={link.href} className="footer-link p-0 mb-2">
+                      {link.text}
+                    </Nav.Link>
+                  ))}
+                </Nav>
+              </Col>
+            </Row>
           </Col>
 
-          {/* Coluna de Contato */}
-          <Col md={4} lg={3} xl={3} className="mx-auto mb-md-0 mb-4">
-            <h6 className="text-uppercase fw-bold">Contatos</h6>
-            <hr className="mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px', backgroundColor: '#0df3aa', height: '2px' }} />
-            <p>R. Jurubatuba, 292 - Centro, São Bernardo do Campo - SP </p>
-            <p>comercial@gerti.com.br</p>
-            <p>(11) 3995-9564 </p>
+          {/* Coluna 3: Contato */}
+          <Col md={4} lg={4}>
+            <h6 className="text-uppercase fw-bold footer-title-green">Contato</h6>
+            <hr className="footer-underline" />
+            <p className="mb-1">
+              R. Jurubatuba, 292 — Centro, <br />São Bernardo 
+              do Campo – SP
+            </p>
+            <p className="mb-1">
+              <a href="mailto:comercial@gerti.com.br" className="footer-link">
+                comercial@gerti.com.br
+              </a>
+            </p>
+            <p className="mb-0">
+              <a href="tel:+551139959564" className="footer-link">
+                (11) 3995-9564
+              </a>
+            </p>
           </Col>
         </Row>
-        
-        {/* Seção de Copyright e Redes Sociais */}
-        <Row className="d-flex align-items-center">
-            <Col md={7} lg={8}>
-                <p className="text-center text-md-start">© 2025 Gerti Cloud.Todos os direitos reservados.</p>
-            </Col>
-            <Col md={5} lg={4} className="text-center text-md-end">
-                 <a href="https://www.facebook.com/gertisolucoes" target="_blank" rel="noopener noreferrer" className="text-white me-4"><FaFacebook size={22}/></a>
-                <a href="https://www.instagram.com/gertisolucoes/" target="_blank" rel="noopener noreferrer" className="text-white me-4"><FaInstagram size={22}/></a>
-                <a href="https://www.linkedin.com/company/gertisolucoes" target="_blank" rel="noopener noreferrer" className="text-white me-4"><FaLinkedin size={22}/></a>
-            </Col>
+
+        {/* BASE DO RODAPÉ */}
+        <Row className="footer-base pt-3 mt-4 align-items-center">
+          <Col md={6} className="text-center text-md-start mb-2 mb-md-0">
+            <a href="https://www.facebook.com/gertisolucoes" target="_blank" rel="noopener noreferrer" className="footer-social-link me-2" aria-label="Facebook">
+              <FaFacebook size={18} />
+            </a>
+            <a href="https://www.instagram.com/gertisolucoes/" target="_blank" rel="noopener noreferrer" className="footer-social-link me-2" aria-label="Instagram">
+              <FaInstagram size={18} />
+            </a>
+            <a href="https://www.linkedin.com/company/gertisolucoes" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn">
+              <FaLinkedin size={18} />
+            </a>
+          </Col>
+          <Col md={6} className="text-center text-md-end">
+            <small className="footer-copy">
+              © {year} Gerti Cloud. Todos os direitos reservados.
+            </small>
+          </Col>
         </Row>
       </Container>
     </footer>
   );
 };
-
-export default Footer;
-

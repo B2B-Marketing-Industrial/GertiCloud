@@ -22,7 +22,8 @@ body {
 
 /* Estilo para o rodapé */
 .footer-gerti {
-  background-color: var(--gerti-purple);
+ background: linear-gradient(135deg, var(--gerti-purple) 0%, color-mix(in srgb, var(--gerti-purple) 85%, var(--gerti-blue) 15%) 100%);
+  color: #fff;
 }
 
 .footer-link {
@@ -623,6 +624,93 @@ body {
   line-height: 1.65;
   padding: 1rem 1.25rem 1.25rem;
 }
+
+/* ---------- Footer: layout e alinhamento ---------- */
+
+
+.footer-gerti { 
+  background: linear-gradient(135deg, var(--gerti-purple) 0%, color-mix(in srgb, var(--gerti-purple) 85%, var(--gerti-blue) 15%) 100%);
+  color: #fff;
+}
+
+.footer-gerti .grid-top {             /* mais “respiro” entre colunas */
+  row-gap: 1.5rem;
+}
+
+/* Título verde fixo (sem hover) para as colunas do meio */
+.footer-title-green {
+  color: var(--gerti-green) !important;
+}
+
+.footer-base {
+  /* ADICIONANDO UM SEPARADOR ELEGANTE */
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Nova classe para o CTA do Rodapé */
+.footer-cta-green {
+  color: var(--gerti-green); /* Cor verde da sua paleta */
+  font-weight: 700;         /* Equivalente a negrito (bold) */
+  font-size: 1.1rem;        /* Um pouco maior para dar destaque */
+}
+
+@media (min-width: 992px) {
+  .footer-gerti .grid-top { column-gap: 2.5rem; }
+}
+
+.footer-underline {                   /* sublinhado padronizado dos títulos */
+  width: 60px;
+  height: 2px;
+  background: var(--gerti-green);
+  border: 0;
+  border-radius: 999px;
+  margin: .25rem 0 1rem;
+}
+
+/* Texto e links do footer */
+.footer-gerti .footer-link {
+  color: rgba(255,255,255,.8) !important;
+  text-decoration: none;
+  padding: .25rem 0;
+  transition: color .16s ease;
+}
+.footer-gerti .footer-link:hover,
+.footer-gerti .footer-link:focus {
+  color: var(--gerti-green) !important;
+}
+
+/* Base (linha inferior com borda suave) */
+.footer-base {
+  border-top: 0;
+}
+.footer-copy { color: rgba(255,255,255,.75); }  /* se quiser usar numa <small> */
+
+/* Ícones sociais: branco por padrão + hover verdinho */
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  color: #fff;                        /* branco SEMPRE */
+  background: transparent;
+  transition: .18s ease, color .18s ease, transform .18s ease;
+}
+.footer-social-link:hover,
+.footer-social-link:focus-visible {
+  background: var(--gerti-green);     /* “pill” verde */
+  color: #0b3b2e;                     /* contraste no ícone */
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* Em telas pequenas, centraliza tudo bonitinho */
+@media (max-width: 767.98px) {
+  .footer-gerti .row > div { text-align: center; }
+  .footer-base { text-align: center; }
+}
+
 
 /* Responsivo */
 @media (max-width: 991.98px) {
