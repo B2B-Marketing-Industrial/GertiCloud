@@ -1,6 +1,4 @@
 // src/components/Pricing.jsx
-
-// --- Dependências do React e React-Bootstrap ---
 import { useEffect, useMemo, useState } from "react";
 import {
   Container,
@@ -29,7 +27,10 @@ import "swiper/css/pagination";
 
 // --- Constantes e Funções Utilitárias ---
 const HOURS_IN_MONTH = 730;
-const WHATSAPP_NUMBER = "551139959564"; // CONFIRME SE ESTE É O NÚMERO CORRETO
+// URL DA PÁGINA DE CADASTRO
+const SIGNUP_URL = "https://cloud.gerti.com.br/signup";
+// NÚMERO DO WHATSAPP
+const WHATSAPP_NUMBER = "551139959564"; 
 
 const brl = (n) =>
   typeof n === "number"
@@ -59,6 +60,7 @@ function normalizePlan(p) {
 
 // --- Componente Principal ---
 export default function Pricing() {
+
   // Estados para controlar os filtros (zonas, tipo de oferta, categorias)
   const { zones, loading: zonesLoading, error: zonesError } = useZones();
   const [zoneUuid, setZoneUuid] = useState("");
@@ -128,8 +130,9 @@ export default function Pricing() {
   const closeDetails = () => setShow(false);
 
   // --- FUNÇÃO ATUALIZADA PARA GERAR O LINK DO WHATSAPP ---
+
   // Agora ela recebe o objeto do plano como argumento para ser reutilizável.
-  const handleAssinar = (plan) => {
+  const  handleContactSpecialist = (plan) => {
     // 1. Garante que o plano foi passado como argumento.
     if (!plan) return;
 
@@ -213,7 +216,6 @@ export default function Pricing() {
               <SwiperSlide key={p.id} className="h-100">
                 <Card className="h-100 shadow-sm">
                   <Card.Body className="d-flex flex-column">
-                    <div className="text-uppercase small text-muted">{p.id}</div>
                     <h3 className="fw-bold">{p.name}</h3>
                     <div className="text-muted mb-2">
                       {p.vcpu != null && <span className="me-3">{p.vcpu} vCPU</span>}
@@ -231,13 +233,32 @@ export default function Pricing() {
                         <div className="text-muted">Preço por hora não informado</div>
                       )}
                     </div>
+                    {/* NOVO LINK DE TEXTO PARA ABRIR O MODAL */}
+                    <div className="text-start mt-2 mb-3">
+                      <span 
+                        className="details-link" 
+                        onClick={() => openDetails(p)}
+                        role="button" // Melhora a acessibilidade
+                        tabIndex={0} // Permite focar com o teclado
+                      >
+                        Detalhes do plano
+                      </span>
+                    </div>
+
                     <div className="mt-auto d-flex gap-2">
-                      {/* BOTÃO PRINCIPAL ATUALIZADO: Chama a função handleAssinar passando o plano 'p' */}
-                      <Button className="w-100" onClick={() => handleAssinar(p)}>
-                        Assinar
+                      {/* BOTÃO PRINCIPAL ATUALIZADO */}
+                      <Button
+                        as="a" // Renderiza o botão como um link <a>
+                        href={SIGNUP_URL} // Aponta para a URL de cadastro
+                        target="_blank" // Abre o link numa nova aba
+                        rel="noopener noreferrer"
+                        className="w-100"
+                                 >
+                        Começar Agora!
                       </Button>
-                      <Button variant="outline-secondary" className="w-100" onClick={() => openDetails(p)}>
-                        Detalhes
+                      {/* BOTÃO SECUNDÁRIO ATUALIZADO */}
+                      <Button variant="outline-secondary" className="w-100" onClick={() => handleContactSpecialist(p)}>
+                        Falar com Especialista
                       </Button>
                     </div>
                   </Card.Body>
@@ -264,7 +285,6 @@ export default function Pricing() {
                         {/* O conteúdo do corpo do modal permanece o mesmo */}
                         <h5 className="mb-3">{selected.name}</h5>
                         <Row className="mb-3">
-                            <Col md={4}><div><strong>ID:</strong><br />{selected.id}</div></Col>
                             <Col md={4}><div><strong>vCPU:</strong><br />{selected.vcpu ?? "-"}</div></Col>
                             <Col md={4}><div><strong>RAM:</strong><br />{Number.isFinite(selected.memGb) ? `${Number(selected.memGb).toFixed(1)} GB` : "-"}</div></Col>
                         </Row>
@@ -293,13 +313,16 @@ export default function Pricing() {
                 <Button variant="secondary" onClick={closeDetails}>
                   Fechar
                 </Button>
-                {/* BOTÃO DO MODAL ATUALIZADO: Chama a mesma função, passando o plano 'selected' */}
+                {/* BOTÃO DO MODAL ATUALIZADO */}
                 <Button 
+                  as="a"
+                  href={SIGNUP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   variant="primary" 
-                  onClick={() => handleAssinar(selected)}
                   disabled={!selected} 
                 >
-                  Assinar
+                  Começar Agora!
                 </Button>
             </Modal.Footer>
         </Modal>
