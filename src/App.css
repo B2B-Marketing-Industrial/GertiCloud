@@ -626,8 +626,6 @@ body {
 }
 
 /* ---------- Footer: layout e alinhamento ---------- */
-
-
 .footer-gerti { 
   background: linear-gradient(135deg, var(--gerti-purple) 0%, color-mix(in srgb, var(--gerti-purple) 85%, var(--gerti-blue) 15%) 100%);
   color: #fff;
@@ -652,6 +650,25 @@ body {
   color: var(--gerti-green); /* Cor verde da sua paleta */
   font-weight: 700;         /* Equivalente a negrito (bold) */
   font-size: 1.1rem;        /* Um pouco maior para dar destaque */
+
+}
+
+.pricing-section-bg {
+  background: linear-gradient(180deg, var(--gerti-white) 0%, #f0f2f5 100%);
+}
+
+/* Estilo para o novo link "Detalhes do plano" nos cards de preço */
+.details-link {
+  color: var(--gerti-blue);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.9rem;
+}
+
+.details-link:hover {
+  text-decoration: underline;
+  filter: brightness(1.1);
 }
 
 @media (min-width: 992px) {
