@@ -45,7 +45,7 @@ const benefitsList = [
 const Benefits = () => {
   return (
     // A classe 'bg-light' foi removida daqui
-    <section className="benefits-section py-5">
+    <section className="benefits-section py-5" id="beneficios">
       <Container>
         <Row className="text-center mb-5">
           <Col>

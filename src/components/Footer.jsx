@@ -4,9 +4,11 @@ import { Container, Row, Col, Nav } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import logoFooter from "../assets/logo-gerti-footer.png"; 
 
+const whatsappLink = `https://api.whatsapp.com/send/?phone=551139959564&text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20com%20um%20especialista%20sobre%20as%20solu%C3%A7%C3%B5es%20Gerti%20Cloud.&type=phone_number&app_absent=0`;
+
 const quickLinks = [
   { href: "#planos", text: "Planos" },
-  { href: "#diferenciais", text: "Diferenciais" },
+  { href: "#beneficios", text: "Diferenciais" },
   { href: "#faq", text: "FAQ" },
 ];
 
@@ -73,14 +75,16 @@ export default function Footer() {
               <a href="mailto:comercial@gerti.com.br" className="footer-link">comercial@gerti.com.br</a>
             </p>
             <p className="mb-0">
-              <a href="tel:+551139959564" className="footer-link">(11) 3995-9564</a>
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="footer-link">
+                (11) 3995-9564
+              </a>
             </p>
           </Col>
         </Row>
 
         {/* Base do rodapé com ícones sociais e texto de direitos autorais */}
         <Row className="footer-base pt-3 mt-4 align-items-center">
-          <Col md={6} className="footer-base pt-3 mt-4 align-items-center">
+          <Col md={6} >
             <a href="https://www.facebook.com/gertisolucoes" target="_blank" rel="noopener noreferrer" className="footer-social-link me-2" aria-label="Facebook">
               <FaFacebook size={18} />
             </a>

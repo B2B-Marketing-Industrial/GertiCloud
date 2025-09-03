@@ -29,7 +29,7 @@ const faqs = [
 
 export default function Faq({ ref_faq }) {
   return (
-    <section className="faq-opt py-5" ref={ref_faq}>
+    <section className="faq-opt py-5" id="faq">
       <Container>
         <Row className="align-items-center g-4 g-lg-5">
           {/* Ilustração à esquerda (no mobile vem primeiro) */}
