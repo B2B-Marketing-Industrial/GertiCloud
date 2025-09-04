@@ -31,15 +31,15 @@ export default function Footer() {
             <img
               src={logoFooter}
               alt="Logo Gerti Cloud"
-              className="footer-logo mb-3"
+              className= "footer-logo footer-logo-raised" 
             />
             <p className="footer-description">
               Especialistas em soluções de computação em nuvem, oferecendo servidores de alta performance e segurança inabalável.
             </p>
           </Col>
 
-          {/* Coluna 2: Links Rápidos (com offset para alinhar o grid) */}
-          <Col md={3} lg={3} className="text-center text-md-start">
+          {/* 2. Coluna 2: Links Rápidos */}
+          <Col md={3} lg={3} className="text-center text-md-center">
             <h6 className="text-uppercase fw-bold footer-title-green">Links Rápidos</h6>
             <hr className="footer-underline" />
             <Nav className="flex-column">
@@ -51,8 +51,8 @@ export default function Footer() {
             </Nav>
           </Col>
 
-          {/* Coluna 3: Links Legais */}
-          <Col md={4} lg={3} className="text-center text-md-start">
+          {/* 3. Coluna 3: Links Legais */}
+          <Col md={4} lg={3} className="text-center text-md-center">
             <h6 className="text-uppercase fw-bold footer-title-green">Legal</h6>
             <hr className="footer-underline" />
             <Nav className="flex-column">
@@ -64,8 +64,8 @@ export default function Footer() {
             </Nav>
           </Col>
 
-          {/* Coluna 4: Contato */}
-          <Col md={5} lg={3} className="text-center text-md-start">
+          {/* 4. Coluna 4: Contato */}
+          <Col md={5} lg={3} className="text-center text-md-center">
             <h6 className="text-uppercase fw-bold footer-title-green">Contato</h6>
             <hr className="footer-underline" />
             <p className="mb-1">
@@ -84,7 +84,7 @@ export default function Footer() {
 
         {/* Base do rodapé com ícones sociais e texto de direitos autorais */}
         <Row className="footer-base pt-3 mt-4 align-items-center">
-          <Col md={6} >
+          <Col md={6}>
             <a href="https://www.facebook.com/gertisolucoes" target="_blank" rel="noopener noreferrer" className="footer-social-link me-2" aria-label="Facebook">
               <FaFacebook size={18} />
             </a>
@@ -95,7 +95,7 @@ export default function Footer() {
               <FaLinkedin size={18} />
             </a>
           </Col>
-          <Col md={6} className="text-center text-md-end">
+          <Col md={6} className=" text-md-end">
             <small className="footer-copy">
               © {year} Gerti Cloud. Todos os direitos reservados.
             </small>

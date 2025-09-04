@@ -690,6 +690,18 @@ body {
   margin: .25rem 0 1rem;
 }
 
+/* Adicionado: Classe para subir o logo do rodapé */
+.footer-logo-raised {
+  margin-top: -2.5rem; /* Ajuste este valor para subir ou descer o logo */
+}
+
+/* Outras regras do footer-logo */
+.footer-logo {
+  max-width: 180px; 
+  height: auto; 
+}
+
+
 /* Texto e links do footer */
 .footer-gerti .footer-link {
   color: rgba(255,255,255,.8) !important;
