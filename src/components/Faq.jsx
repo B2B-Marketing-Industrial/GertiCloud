@@ -1,9 +1,9 @@
 // src/components/Faq.jsx
 import React from "react";
 import { Container, Row, Col, Accordion } from "react-bootstrap";
-// use "@/..." só se seu alias estiver configurado em vite/jsconfig/tsconfig
 import cloudFaq from "../assets/cloud-faq.svg"; 
 
+// Seus dados do FAQ, que já estão corretos
 const faqs = [
   {
     q: 'O que significa "suporte em 5 minutos" na prática?',
@@ -27,33 +27,40 @@ const faqs = [
   },
 ];
 
-export default function Faq({ ref_faq }) {
+export default function Faq() {
   return (
     <section className="faq-opt py-5" id="faq">
       <Container>
         <Row className="align-items-center g-4 g-lg-5">
-          {/* Ilustração à esquerda (no mobile vem primeiro) */}
-          <Col lg={5} className="order-1 order-lg-0">
+          {/* Ilustração à esquerda (desktop) */}
+          {/* Adicionado: d-none d-lg-block para mostrar a imagem apenas no desktop */}
+          <Col lg={5} className="d-none d-lg-block">
             <figure className="faq-illu-card">
               <img
                 src={cloudFaq}
                 alt="Ilustração de cloud e suporte humano — FAQ Gerti Cloud"
                 className="faq-illu-img"
-                width="560"
-                height="420"
-                loading="lazy"
-                decoding="async"
               />
             </figure>
           </Col>
 
-          {/* Texto + acordeão à direita */}
-          <Col lg={7}>
+          {/* Texto + acordeão + Imagem (mobile) à direita */}
+          <Col xs={12} lg={7} className="text-center text-lg-start">
             <span className="faq-eyebrow">FAQ</span>
             <h2 className="faq-title">Perguntas que realmente importam</h2>
             <p className="faq-subtitle">
-              Se não encontrar sua resposta, fale com a gente e resolvemos em minutos.
+              Se não encontrar sua resposta, entre em contato conosco e te auxiliaremos em minutos.
             </p>
+
+            {/* Adicionado: Imagem para o mobile */}
+            {/* Adicionado: d-block d-lg-none para mostrar a imagem apenas no mobile */}
+            <figure className="faq-illu-card text-center d-block d-lg-none">
+              <img
+                src={cloudFaq}
+                alt="Ilustração de cloud e suporte humano — FAQ Gerti Cloud"
+                className="faq-illu-img"
+              />
+            </figure>
 
             <Accordion defaultActiveKey="0" className="faq-accordion">
               {faqs.map((item, i) => (
