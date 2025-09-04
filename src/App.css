@@ -750,6 +750,7 @@ body {
     margin-inline: auto; /* Centraliza a linha horizontalmente */
   }
 
+  
 /* Responsivo */
 @media (max-width: 991.98px) {
   .faq-illu-card { margin-bottom: 12px; }
