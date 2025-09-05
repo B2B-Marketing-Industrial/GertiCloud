@@ -48,7 +48,7 @@ export default function TrustSection({ ref_confiança }) {
       <Container>
         <div className="trust-grid">
           {/* Área de texto (desktop: coluna esquerda, topo) */}
-          <div className="trust-area-text">
+        <div className="trust-area-text text-center text-md-start">
             <h2 id="trust-heading" className="section-title fw-bold mb-2">
               Nossa promessa é ser seu parceiro, não apenas mais um boleto para pagar.
             </h2>
