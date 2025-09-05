@@ -152,7 +152,7 @@ export default function Pricing() {
 
   // --- Renderização do Componente ---
   return (
-    <section className="pricing-section py-5 pricing-section-bg" id="planos">
+    <section id="planos" className="pricing-section position-relative">
       <Container>
         {/* Título e Filtros (sem alterações) */}
         <Row className="text-center mb-4">
@@ -210,7 +210,7 @@ export default function Pricing() {
               992: { slidesPerView: 3, spaceBetween: 30 },
               1200: { slidesPerView: 4, spaceBetween: 30 },
             }}
-            className="py-4"
+            className="py-4 position-relative" 
           >
             {plans.map((p) => (
               <SwiperSlide key={p.id} className="h-100">

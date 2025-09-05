@@ -898,3 +898,41 @@ body {
     width: 2.5rem;
   }
 }
+
+  Adicionado: Estilos para o carrossel de precificação
+*/
+.pricing-section .swiper-button-prev,
+.pricing-section .swiper-button-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gerti-white);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  color: var(--gerti-blue);
+  z-index: 10;
+  
+  /* Posição fora do contêiner */
+  margin: 0 -22px;
+}
+
+.pricing-section .swiper-button-prev {
+  left: -20px; 
+}
+
+.pricing-section .swiper-button-next {
+  right: -20px;
+}
+
+/* Adicionado: Ajuste de posição das setas para telas menores */
+@media (max-width: 767.98px) {
+  .pricing-section .swiper-button-prev {
+    left: 0;
+     margin: 0;
+  }
+  .pricing-section .swiper-button-next {
+    right: 0;
+     margin: 0;
+  }
+  }
