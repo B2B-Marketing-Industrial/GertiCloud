@@ -210,7 +210,7 @@ export default function Pricing() {
               992: { slidesPerView: 3, spaceBetween: 30 },
               1200: { slidesPerView: 4, spaceBetween: 30 },
             }}
-            className="py-4 position-relative" 
+            className="py-4 position-relative pricing-swiper" 
           >
             {plans.map((p) => (
               <SwiperSlide key={p.id} className="h-100">
@@ -314,16 +314,17 @@ export default function Pricing() {
                   Fechar
                 </Button>
                 {/* BOTÃO DO MODAL ATUALIZADO */}
-                <Button 
-                  as="a"
-                  href={SIGNUP_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="primary" 
-                  disabled={!selected} 
-                >
-                  Começar Agora!
-                </Button>
+                <Button
+  as="a"
+  href={SIGNUP_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-100 btn-stack-mobile"
+  aria-label="Começar Agora!"
+>
+  <span className="stack-line-1">Começar</span>
+  <span className="stack-line-2">Agora!</span>
+</Button>
             </Modal.Footer>
         </Modal>
 
