@@ -37,7 +37,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Converse com um Especialista
+            Começar Agora!
           </Button>
         </Navbar.Collapse>
       </Container>

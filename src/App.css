@@ -42,52 +42,179 @@ body {
   color: var(--gerti-white) !important;
 }
 
-/* Estilos da Seção Hero com Fundo de Imagem */
+/* Hero base (mantém seu setup atual) */
 .hero-section {
-  position: relative; /* Essencial para o sistema de camadas */
+  position: relative;
+  min-height: clamp(650px, 75vh, 900px);
   overflow: hidden;
-  padding: 150px 0 !important;
-  display: flex;
-  align-items: center;
-  color: var(--gerti-white);
 }
 
 .hero-background-image {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 1; /* Camada 1: O fundo de tudo */
+  object-position: 70% center; 
 }
 
 .hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, rgba(0, 153, 204, 0.7), rgba(85, 32, 174, 0.7));
-  z-index: 2; /* Camada 2: Fica entre a imagem e o texto */
+  inset: 0;
+  background:
+    /* degradê principal escurecendo de cima p/ baixo */
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--gerti-black) 82%, var(--gerti-blue) 18%) 0%,
+      color-mix(in srgb, var(--gerti-black) 78%, var(--gerti-blue) 22%) 55%,
+      color-mix(in srgb, var(--gerti-black) 72%, var(--gerti-blue) 28%) 100%
+    ),
+    /* brilho radial com a cor da marca (blue+purple) na direita */
+    radial-gradient(
+      60% 60% at 70% 15%,
+      color-mix(in srgb, var(--gerti-blue) 65%, var(--gerti-purple) 35%) / 0.28,
+      transparent 60%
+    );
 }
 
 .hero-content {
   position: relative;
-  z-index: 3; /* Camada 3: O conteúdo de texto fica na frente de tudo */
+  z-index: 2;
+  padding-block-start: clamp(150px, 20vh, 280px);
+  padding-block-end: clamp(82px, 8vh, 96px);
 }
 
+/* Headline */
 .hero-title {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  color: var(--gerti-white);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  font-size: clamp(28px, 5vw, 54px);
+  margin-bottom: 30px;
 }
 
-.hero-subtitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 2rem;
-  color: rgba(255, 255, 255, 0.9);
+.hero-inner {
+  width: 100%;
+  max-width: 780px;
+  margin-inline: auto;
+}
+
+/* Lista de benefícios */
+.hero-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px 0;
+  display: grid;
+  gap: 10px;
+ }
+
+.hero-benefits li {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--gerti-white);
+  font-size: clamp(14px, 2.6vw, 18px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 10px 14px;
+  border-radius: 999px; /* pill */
+  backdrop-filter: blur(2px);
+}
+
+.hero-benefits li svg {
+  flex: 0 0 auto;
+  font-size: 18px;
+  color: var(--gerti-green);
+}
+
+.hero-benefits li span {
+  display: inline-block;
+}
+
+/* Em telas médias+, alinha a lista e reduz “pill width” */
+@media (min-width: 768px) {
+  .hero-benefits {
+   grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE/TABLET: recentra um pouco para não perder o assunto */
+@media (max-width: 991.98px){
+
+  .hero-background-image{
+    object-position: 50% center; /* ajuste fino para mobile */
+  }
+
+  .hero-content{
+    padding-block-start: clamp(100px, 22vh, 160px); /* antes: ~72px */
+   
+  }
+
+  .hero-title{
+    text-align: center !important;    /* <- garante que não herda 'left' */
+    margin: 5 auto 16px ;
+    max-width: 22ch;                   /* evita 3 quebras de linha */
+    font-size: clamp(26px, 6vw, 35px);
+    line-height: 1.1;
+    padding-inline: 24px;
+  }
+
+  .hero-text-col{
+    /* centraliza tudo no mobile/tablet */
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  .hero-title{
+    /* compacta e evita quebrar em 3 linhas */
+    font-size: clamp(26px, 6vw, 35px);
+    margin: 0 auto 20px;
+    max-width: 22ch;
+   line-height: 1.1;
+  }
+
+  .hero-benefits{
+    justify-items: center;   /* chips centralizados */
+    margin-top: 20px;  /* pequeno respiro extra após o título */
+     gap: 14px;      
+      }
+      
+  .hero-benefits li{
+    width: fit-content;      /* não deixar o chip esticar demais */
+  }
+
+  .btn-gerti-green{
+    display: inline-flex;    /* centraliza o botão */
+    margin: 6px auto 0;
+  }
+}
+
+/* Media query para telas de desktop (>= 992px) */
+@media (min-width: 992px) {
+  /* Alinha os itens da lista à esquerda em telas grandes */
+  .hero-benefits li {
+    justify-self: flex-start;
+  }
+
+   .hero-content .text-lg-start {
+    text-align: left !important; 
+  }
+
+  .hero-text-col {
+    /* Força a coluna a se alinhar à esquerda, ignorando o espaço vazio */
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .hero-text-col {
+    /* Ajusta o padding esquerdo para dar respiro */
+    padding-left: 5rem !important; 
+    text-align: center;
+    margin-left: 0;
+  }
 }
 
 /* Botão personalizado com o verde da marca para o Hero */
@@ -98,7 +225,7 @@ body {
   font-weight: 600 !important; 
   font-size: 1.2rem !important;
   padding: 1rem 2.5rem ;
-  border-radius: 50px;
+  border-radius: 10px !important;
   transition: all 0.3s ease;
 }
 
@@ -860,8 +987,8 @@ body {
   .hero-title { font-size: 2.2rem; }
   .hero-subtitle { font-size: 1.1rem; }
   .hero-section {
-    padding-top: 80px !important;
-    padding-bottom: 60px !important;
+    padding-top: 10px !important;
+    padding-bottom: 70px !important;
     min-height: auto;
   }
 
@@ -899,8 +1026,6 @@ body {
   }
 }
 
-  Adicionado: Estilos para o carrossel de precificação
-*/
 .pricing-section .swiper-button-prev,
 .pricing-section .swiper-button-next {
   top: 50%;
