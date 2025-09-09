@@ -30,15 +30,15 @@ export default function Header() {
             <Nav.Link href="#faq" onClick={closeIfMobile}>FAQ</Nav.Link>
           </Nav>
 
-          <Button
-            href="https://api.whatsapp.com/send/?phone=551139959564&text&type=phone_number&app_absent=0"
-            variant="outline-primary"
-            className="btn-cta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Começar Agora!
-          </Button>
+         <Button
+         href="https://cloud.gerti.com.br/signup"
+         variant="outline-primary"
+         className="btn-cta"
+         target="_blank"
+          rel="noopener noreferrer"
+>
+         Começar Agora!
+        </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
