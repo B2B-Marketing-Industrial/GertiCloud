@@ -20,29 +20,13 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
-/* Estilo para o rodapé */
-.footer-gerti {
- background: linear-gradient(135deg, var(--gerti-purple) 0%, color-mix(in srgb, var(--gerti-purple) 85%, var(--gerti-blue) 15%) 100%);
-  color: #fff;
-}
-
 /* Adicionado: Estilo para a imagem do logo no footer */
 .footer-logo {
   max-width: 180px; /* Define a largura máxima */
   height: auto; /* Mantém a proporção da imagem */
 }
 
-.footer-link {
-  color: rgba(255, 255, 255, 0.7) !important;
-  text-decoration: none;
-  transition: color 0.2s ease-in-out;
-}
-
-.footer-link:hover {
-  color: var(--gerti-white) !important;
-}
-
-/* Hero base (mantém seu setup atual) */
+/* Hero base */
 .hero-section {
   position: relative;
   min-height: clamp(650px, 75vh, 900px);
@@ -154,7 +138,7 @@ body {
 
   .hero-title{
     text-align: center !important;    /* <- garante que não herda 'left' */
-    margin: 5 auto 16px ;
+    margin: 5px auto 16px ;
     max-width: 22ch;                   /* evita 3 quebras de linha */
     font-size: clamp(26px, 6vw, 35px);
     line-height: 1.1;
@@ -166,14 +150,6 @@ body {
     text-align: center !important;
     padding-left: 0 !important;
     margin-left: 0 !important;
-  }
-
-  .hero-title{
-    /* compacta e evita quebrar em 3 linhas */
-    font-size: clamp(26px, 6vw, 35px);
-    margin: 0 auto 20px;
-    max-width: 22ch;
-   line-height: 1.1;
   }
 
   .hero-benefits{
@@ -199,21 +175,14 @@ body {
     justify-self: flex-start;
   }
 
-   .hero-content .text-lg-start {
-    text-align: left !important; 
+  .hero-content .text-lg-start {
+    text-align: left !important;
   }
 
   .hero-text-col {
-    /* Força a coluna a se alinhar à esquerda, ignorando o espaço vazio */
     margin-left: 0;
-    text-align: left;
-  }
-
-  .hero-text-col {
-    /* Ajusta o padding esquerdo para dar respiro */
-    padding-left: 5rem !important; 
-    text-align: center;
-    margin-left: 0;
+    text-align: left;                 /* <— mantém à esquerda */
+    padding-left: 5rem !important;    /* respiro */
   }
 }
 
@@ -822,13 +791,6 @@ body {
   margin-top: -2.5rem; /* Ajuste este valor para subir ou descer o logo */
 }
 
-/* Outras regras do footer-logo */
-.footer-logo {
-  max-width: 180px; 
-  height: auto; 
-}
-
-
 /* Texto e links do footer */
 .footer-gerti .footer-link {
   color: rgba(255,255,255,.8) !important;
@@ -841,10 +803,6 @@ body {
   color: var(--gerti-green) !important;
 }
 
-/* Base (linha inferior com borda suave) */
-.footer-base {
-  border-top: 0;
-}
 .footer-copy { color: rgba(255,255,255,.75); }  /* se quiser usar numa <small> */
 
 /* Ícones sociais: branco por padrão + hover verdinho */
@@ -1058,7 +1016,7 @@ body {
     font-size: 18px; /* tamanho do ícone */
   }
 }
-
+  
 /* Mobile/Tablet: setas dentro do slider, sem atrapalhar leitura */
 @media (max-width: 991.98px) {
   .pricing-swiper .swiper-button-prev { left: 0;  margin: 0; }
@@ -1101,6 +1059,7 @@ body {
     padding-top: .8rem;
     padding-bottom: .6rem;
   }
+}
 
 /* ===== Pricing: quebra "Começar Agora!" em 2 linhas só no mobile ===== */
 @media (max-width: 575.98px) {
@@ -1121,3 +1080,5 @@ body {
     display: block;
   }
 }
+
+.pricing-section { position: relative; }
