@@ -13,8 +13,10 @@ const quickLinks = [
 ];
 
 const legalLinks = [
-  { href: "/termos", text: "Termos de Uso" },
-  { href: "/privacidade", text: "Política de Privacidade" },
+  { href: "https://suporte.gerti.com.br/r/termos-legais-cloud-computing-public/externals/knowledges/show/34529/d553ffa9-bd54-4ec0-a89f-d47918c3b2bd/11610",
+    text: "Termos de Uso"  },
+  {  href: "https://suporte.gerti.com.br/r/politica-de-uso-e-privacidade-cloud-computing-public/externals/knowledges/show/34530/7e575c8b-06a7-4f81-9f22-4f7c2bd0cf32/11610", 
+    text: "Política de Privacidade"  },
 ];
 
 export default function Footer() {

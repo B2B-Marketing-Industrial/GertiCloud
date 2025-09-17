@@ -29,16 +29,25 @@ export default function Header() {
             <Nav.Link href="#beneficios" onClick={closeIfMobile}>Diferenciais</Nav.Link>
             <Nav.Link href="#faq" onClick={closeIfMobile}>FAQ</Nav.Link>
           </Nav>
-
-         <Button
-         href="https://cloud.gerti.com.br/signup"
-         variant="outline-primary"
+           <div className="d-flex align-items-center gap-2">
+          <Button
+         href="https://cloud.gerti.com.br/login"
+         variant="btn-cta btn-outline-gerti-blue" 
          className="btn-cta"
          target="_blank"
           rel="noopener noreferrer"
->
-         Começar Agora!
+>         Entrar no console
         </Button>
+
+         <Button
+         href="https://cloud.gerti.com.br/signup"
+         variant="btn-cta btn-solid-primary"
+         className="btn-cta"
+         target="_blank"
+          rel="noopener noreferrer"
+>         Crie sua conta gratuita!
+        </Button>
+        </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
