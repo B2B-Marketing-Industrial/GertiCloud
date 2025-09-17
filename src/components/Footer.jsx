@@ -51,7 +51,7 @@ export default function Footer() {
                 </Nav.Link>
               ))}
             </Nav>
-          </Col>
+            </Col>
 
           {/* 3. Coluna 3: Links Legais */}
           <Col md={4} lg={3} className="text-center text-md-center">
@@ -64,7 +64,16 @@ export default function Footer() {
                 </Nav.Link>
               ))}
             </Nav>
-          </Col>
+            {/* Adicionando o iframe do badge de segurança aqui */}
+            <iframe
+              src="https://scores.securityscorecard.io/security-rating/badges/gerti.com.br"
+              width="150"
+              height="75"
+              frameBorder="0"
+              title="Security Scorecard Badge"
+              style={{ display: 'block', margin: '1rem auto 0' }} // Estilo inline para alinhamento
+            ></iframe>
+            </Col>
 
           {/* 4. Coluna 4: Contato */}
           <Col md={5} lg={3} className="text-center text-md-center">
@@ -81,21 +90,24 @@ export default function Footer() {
                 (11) 3995-9564
               </a>
             </p>
+            {/* Adicionando os ícones sociais aqui */}
+            <div className="d-flex justify-content-center justify-content-md-center gap-3 mt-3">
+              <a href="https://www.facebook.com/gertisolucoes" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Facebook">
+                <FaFacebook size={18} />
+              </a>
+              <a href="https://www.instagram.com/gertisolucoes/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
+                <FaInstagram size={18} />
+              </a>
+              <a href="https://www.linkedin.com/company/gertisolucoes" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn">
+                <FaLinkedin size={18} />
+              </a>
+            </div>
           </Col>
         </Row>
 
         {/* Base do rodapé com ícones sociais e texto de direitos autorais */}
         <Row className="footer-base pt-3 mt-4 align-items-center">
           <Col md={6}>
-            <a href="https://www.facebook.com/gertisolucoes" target="_blank" rel="noopener noreferrer" className="footer-social-link me-2" aria-label="Facebook">
-              <FaFacebook size={18} />
-            </a>
-            <a href="https://www.instagram.com/gertisolucoes/" target="_blank" rel="noopener noreferrer" className="footer-social-link me-2" aria-label="Instagram">
-              <FaInstagram size={18} />
-            </a>
-            <a href="https://www.linkedin.com/company/gertisolucoes" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="LinkedIn">
-              <FaLinkedin size={18} />
-            </a>
           </Col>
           <Col md={6} className=" text-md-end">
             <small className="footer-copy">
