@@ -29,7 +29,7 @@ export default function Header() {
             <Nav.Link href="#beneficios" onClick={closeIfMobile}>Diferenciais</Nav.Link>
             <Nav.Link href="#faq" onClick={closeIfMobile}>FAQ</Nav.Link>
           </Nav>
-           <div className="d-flex flex-column flex-lg-row align-items-center gap-0">
+           <div className="d-flex flex-column flex-lg-row align-items-center gap-1">
           <Button
          href="https://cloud.gerti.com.br/login"
          variant="btn-cta btn-outline-gerti-blue" 
