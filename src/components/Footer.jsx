@@ -66,9 +66,9 @@ export default function Footer() {
             </Nav>
             {/* Adicionando o iframe do badge de segurança aqui */}
             <iframe
-              src="https://scores.securityscorecard.io/security-rating/badges/gerti.com.br"
-              width="150"
-              height="75"
+              src="https://scores.securityscorecard.io/security-rating/badge/gerti.com.br"
+              width="256"
+              height="100"
               frameBorder="0"
               title="Security Scorecard Badge"
               style={{ display: 'block', margin: '1rem auto 0' }} // Estilo inline para alinhamento
@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Base do rodapé com ícones sociais e texto de direitos autorais */}
         <Row className="footer-base pt-3 mt-4 align-items-center">
           <Col md={6}>
-          </Col>
+            </Col>
           <Col md={6} className=" text-md-end">
             <small className="footer-copy">
               © {year} Gerti Cloud. Todos os direitos reservados.
