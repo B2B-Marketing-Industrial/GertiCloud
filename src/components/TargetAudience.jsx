@@ -7,22 +7,22 @@ import { FaRocket, FaHeadset, FaLifeRing, FaShoppingCart } from 'react-icons/fa'
 const audienceList = [
   {
     icon: <FaRocket size={40} />,
-    title: 'Startups de Software (SAAS)',
+    title: 'Startups de Software (SaaS)',
     text: 'Escale sua aplicação de forma inteligente. Com nossa infraestrutura flexível e suporte especializado, você pode crescer sem queimar seu caixa ou se preocupar com a infra.'
   },
   {
     icon: <FaHeadset size={40} />,
-    title: 'Donos de PME',
+    title: 'Empresas PMEs',
     text: 'Sua empresa depende do site/sistema funcionando 24h. Quando algo der errado (e sempre dá), você quer falar com alguém que resolva, não com bot ou ticket que demora dias.'
   },
   {
     icon: <FaLifeRing size={40} />,
-    title: 'Desenvolvedores em Empresas Pequenas',
-    text: 'Você é o "cara da TI" mas não tem tempo de ser especialista em infraestrutura. Precisa de alguém para te dar suporte técnico de verdade quando travar.'
+    title: 'Desenvolvedores e Analistas de Infraestrutura',
+    text: 'Nem todo mundo precisa ser especilista em cloud, mas precisa de alguém para te dar suporte técnico de verdade quando travar.'
   },
   {
     icon: <FaShoppingCart size={40} />,
-    title: 'Donos de E-commerce',
+    title: 'Empresas de  E-commerce',
     text: 'Seu site não pode cair na Black Friday. Garantimos o desempenho e a segurança para você aguentar os picos de venda e nunca perder um cliente por instabilidade.'
   }
 ];
@@ -34,7 +34,7 @@ const TargetAudience = () => {
       <Container>
         <Row className="text-center mb-5">
           <Col>
-            <h2 className="section-title">Para Quem é a Gerti Cloud?</h2>
+            <h2 className="section-title">Para Quem é a GERTI Cloud?</h2>
             <p className="lead text-muted">Soluções pensadas para quem vive a tecnologia no dia a dia e não tem tempo a perder.</p>
           </Col>
         </Row>
