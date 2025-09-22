@@ -8,9 +8,9 @@ const benefitsList = [
     icon: <FaWhatsapp size={24} />, 
     title: 'Suporte que Funciona de Verdade', 
     items: [
-      'Especialista brasileiro responde em menos de 5 minutos',
+      'Especialistas brasileiros, respostas rápidas',
       'Sem bot, sem IA, sem ticket perdido',
-      'WhatsApp direto com o time técnico'
+      'Canal direto com o time técnico'
     ] 
   },
   { 
@@ -35,9 +35,9 @@ const benefitsList = [
     icon: <FaShieldVirus size={24} />, 
     title: 'Segurança Sem Complicação', 
     items: [
-      'Proteção anti-DDoS incluída',
-      'Backup automático configurado para você',
-      'Monitoramento 24h com alerta no seu WhatsApp'
+      'Ambiente Certificado ISO27001, 22301, 27701',
+      'Soluções de backup disponívei na plataforma',
+      'SLA de disponibilidade 99,9%'
     ] 
   }
 ];
@@ -49,7 +49,7 @@ const Benefits = () => {
       <Container>
         <Row className="text-center mb-5">
           <Col>
-            <h2 className="section-title">O Que Você Ganha na Gerti Cloud ?</h2>
+            <h2 className="section-title">O Que Você Ganha na GERTI Cloud ?</h2>
           </Col>
         </Row>
         <Row>
