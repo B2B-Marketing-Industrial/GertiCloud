@@ -11,9 +11,9 @@ import {
 const steps = [
   {
     icon: <FaBolt />,
-    title: "Menos de 5 Minutos",
+    title: "Suporte ágil e rápido",
     text:
-      'WhatsApp, telefone ou chat, especialista humano, problema resolvido. (Não bot, não ticket, não "aguarde de 5 a 7 dias úteis")'
+      'E-mail, Portal de chamados e telefone, especialista humano, problema resolvido. (Não bot, não ticket, não "aguarde de 5 a 7 dias úteis")'
   },
   {
     icon: <FaFlag />,
@@ -40,7 +40,7 @@ const SupportProcess = () => {
     <section id="suporte" className="support-process-section py-5">
       <Container>
         <div className="text-center mb-5">
-          <h2 className="section-title">Como Funciona o Suporte da Gerti ?</h2>
+          <h2 className="section-title">Como Funciona o Suporte da GERTI ?</h2>
           <p className="lead text-muted">(O Que Ninguém Mais Faz)</p>
         </div>
 
