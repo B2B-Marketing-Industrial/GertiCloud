@@ -309,23 +309,28 @@ export default function Pricing() {
                     </>
                 )}
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={closeDetails}>
-                  Fechar
-                </Button>
-                {/* BOTÃO DO MODAL ATUALIZADO */}
-                <Button
-  as="a"
-  href={SIGNUP_URL}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="w-100 btn-stack-mobile"
-  aria-label="Começar Agora!"
+            <Modal.Footer
+  className="d-flex justify-content-end align-items-center gap-2 flex-nowrap" // garante linha única
 >
-  <span className="stack-line-1">Começar</span>
-  <span className="stack-line-2">Agora!</span>
-</Button>
-            </Modal.Footer>
+  <Button
+    variant="secondary"
+    onClick={closeDetails}
+    className="btn-cta btn-outline-gerti-blue" // padroniza estilo com header
+  >
+    Fechar
+  </Button>
+
+  <Button
+    as="a"
+    href={SIGNUP_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-cta btn-solid-primary" // sólido azul + mesmo hover
+    aria-label="Começar Agora!"
+  >
+    Começar Agora!
+  </Button>
+</Modal.Footer>
         </Modal>
 
       </Container>
