@@ -35,7 +35,8 @@ const objections = [
     text: (
       <>
         Absolutamente. A segurança é nossa obsessão. Implementamos{" "}
-        <strong>medidas avançadas de proteção</strong> e <strong>testes rigorosos</strong> para
+        <strong>medidas avançadas de proteção, testes rigorosos</strong> e nossa infratestrutura de Data Center é certificada <strong> 
+        Tier III Design, Tier III Facility,PCI DSS Compliant Type II SOC</strong> para
         garantir que seus dados estejam sempre seguros e sua operação protegida.
       </>
     ),
