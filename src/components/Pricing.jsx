@@ -175,7 +175,8 @@ export default function Pricing() {
                             <Form.Select value={zoneUuid} onChange={(e) => setZoneUuid(e.target.value)} aria-label="Zona" disabled={zonesLoading || !!zonesError} className="w-100 w-sm-auto">
                                 {zonesLoading && <option>Carregando zonas…</option>}
                                 {zonesError && <option disabled>Erro ao carregar zonas</option>}
-                                {!zonesLoading && !zonesError && zones.map((z) => (<option key={z.uuid} value={z.uuid}>{z.name} — {z.countryName}</option>))}
+                                {!zonesLoading && !zonesError && zones.map((z) => (
+                                 <option key={z.uuid} value={z.uuid}>{z.displayLabel}</option>))}
                             </Form.Select>
                         </Col>
                         {offering === "BUNDLE" && (
