@@ -29,16 +29,28 @@ export default function Footer() {
         <Row className="gy-4">
           
           {/* Coluna 1: Logo e Descrição */}
-          <Col xs={12} md={5} lg={3} className="text-center text-md-start">
-            <img
-              src={logoFooter}
-              alt="Logo Gerti Cloud"
-              className= "footer-logo footer-logo-raised" 
-            />
-            <p className="footer-description">
-              Especialistas em soluções de computação em nuvem, oferecendo servidores de alta performance e segurança inabalável.
-            </p>
-          </Col>
+<Col xs={12} md={5} lg={3} className="text-center text-md-start">
+  <img
+    src={logoFooter}
+    alt="Logo Gerti Cloud"
+    className="footer-logo footer-logo-raised"
+  />
+  <p className="footer-description">
+    Especialistas em soluções de computação em nuvem, oferecendo servidores de alta performance e segurança inabalável.
+  </p>
+
+  {/* SELINHO — centralizado no mobile e à esquerda no desktop */}
+  <div className="d-flex flex-row flex-wrap justify-content-center align-content-center justify-content-md-start mt-3">
+    <iframe
+      className="ssc-badge"
+      src="https://scores.securityscorecard.io/security-rating/badge/gerti.com.br"
+      width="256"
+      height="100"
+      frameBorder="0"
+      title="Security Scorecard Badge"
+    />
+  </div>
+</Col>
 
           {/* 2. Coluna 2: Links Rápidos */}
           <Col md={3} lg={3} className="text-center text-md-center">
@@ -64,15 +76,6 @@ export default function Footer() {
                 </Nav.Link>
               ))}
             </Nav>
-            {/* Adicionando o iframe do badge de segurança aqui */}
-            <iframe
-              src="https://scores.securityscorecard.io/security-rating/badge/gerti.com.br"
-              width="256"
-              height="100"
-              frameBorder="0"
-              title="Security Scorecard Badge"
-              style={{ display: 'block', margin: '1rem auto 0' }} // Estilo inline para alinhamento
-            ></iframe>
             </Col>
 
           {/* 4. Coluna 4: Contato */}

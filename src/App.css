@@ -809,6 +809,14 @@ outline: none !important; /* Remove o outline padrão do navegador */
   filter: brightness(1.1);
 }
 
+/* Badge do SecurityScorecard */
+.ssc-badge {
+  display: block;        /* tira inline gap */
+  max-width: 100%;       /* não estoura no mobile */
+  height: 100px;         /* mantém proporção do embed */
+  border: 0;
+}
+
 @media (min-width: 992px) {
   .footer-gerti .grid-top { column-gap: 2.5rem; }
 }
