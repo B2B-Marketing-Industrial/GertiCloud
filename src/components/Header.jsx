@@ -30,23 +30,25 @@ export default function Header() {
             <Nav.Link href="#faq" onClick={closeIfMobile}>FAQ</Nav.Link>
           </Nav>
            <div className="d-flex flex-column flex-lg-row align-items-center gap-1">
-          <Button
-         href="https://cloud.gerti.com.br/login"
-         variant="btn-cta btn-outline-gerti-blue" 
-         className="btn-cta"
-         target="_blank"
-          rel="noopener noreferrer"
->         Entrar no console
-        </Button>
-
          <Button
-         href="https://cloud.gerti.com.br/signup"
-         variant="btn-cta btn-solid-primary"
-         className="btn-cta"
-         target="_blank"
-          rel="noopener noreferrer"
->         Crie sua conta gratuita!
-        </Button>
+  as="a"
+  href="https://cloud.gerti.com.br/login"
+  className="btn-cta btn-outline-gerti-blue"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Entrar no console
+</Button>
+
+<Button
+  as="a"
+  href="https://cloud.gerti.com.br/signup"
+  className="btn-cta btn-solid-primary"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  Crie sua conta gratuita!
+</Button>
         </div>
         </Navbar.Collapse>
       </Container>

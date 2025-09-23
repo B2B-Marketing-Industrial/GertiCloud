@@ -10,9 +10,9 @@ const objections = [
     title: "“A migração parece complicada…”",
     text: (
       <>
-        Nós sabemos. Por isso, nossa equipe de especialistas faz o processo{" "}
-        <strong>junto com você</strong>, garantindo uma transição suave e segura,
-        sem interrupções para o seu cliente.
+        Nós sabemos. Nossa equipe <strong>guia e acompanha</strong> a migração,
+      garantindo <strong>transição segura</strong>, <strong>sem interrupções</strong> para seu
+      cliente; se necessário, executamos o projeto com mão de obra especializada.
       </>
     ),
   },

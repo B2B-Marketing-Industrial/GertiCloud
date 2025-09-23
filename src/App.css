@@ -303,31 +303,11 @@ body {
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.07);
 }
 
-.header-gerti .btn-outline-gerti-blue:active,
-.header-gerti .btn-outline-gerti-blue:focus {
-background-color: var(--gerti-blue) !important; /* Fundo azul Gerti */
-border-color: var(--gerti-blue) !important; /* Borda azul Gerti */
-color: var(--gerti-white) !important; /* Texto branco */
-box-shadow: 0 0 0 0.25rem rgba(0, 153, 204, 0.5) !important; /* Box-shadow com a cor Gerti */
-outline: none !important; /* Remove o outline padrão do navegador */
-}
-
+/*botão crie sua conta gratuita*/
 .header-gerti .btn-solid-primary {
   background-color: var(--gerti-blue) !important;
   border-color: var(--gerti-blue) !important;
   color: var(--gerti-white) !important;
-}
-
-/* Estilos para o botão "Entrar no console" (vazado) nos estados de hover/foco/clique */
-.header-gerti .btn-outline-gerti-blue:hover,
-.header-gerti .btn-outline-gerti-blue:focus,
-.header-gerti .btn-outline-gerti-blue:active {
-  background-color: var(--gerti-blue) !important;
-  border-color: var(--gerti-blue) !important;
-  color: var(--gerti-white) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Adiciona a sombra */
-  transform: translateY(-2px); /* Adiciona o efeito de "levantar" */
-  filter: brightness(1.1); /* Adiciona o brilho */
 }
 
 /* Estilos para o botão "Crie sua conta gratuita!" (sólido) no hover */
@@ -335,6 +315,13 @@ outline: none !important; /* Remove o outline padrão do navegador */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
   filter: brightness(1.1);
+}
+
+/* Estilos para o botão "Entrar no console" (vazado) */
+.header-gerti .btn-outline-gerti-blue {
+  background-color: transparent !important;
+  border-color: var(--gerti-blue) !important;
+  color: var(--gerti-blue) !important;
 }
 
 /* Estilo para os links de navegação */
