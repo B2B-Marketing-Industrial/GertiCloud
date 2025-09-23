@@ -6,8 +6,8 @@ import cloudFaq from "../assets/cloud-faq.svg";
 // Seus dados do FAQ, que já estão corretos
 const faqs = [
   {
-    q: 'O que significa "suporte em 5 minutos" na prática?',
-    a: 'Significa que ao acionar nosso canal de suporte prioritário (chat ou telefone), um especialista técnico real, que fala português, irá iniciar o atendimento com você em menos de 5 minutos. Nada de longas filas de espera ou robôs.'
+    q: 'O que significa "suporte em minutos" e não horas na prática?',
+    a: 'Significa que ao acionar nosso canal de suporte prioritário (chat ou telefone), um especialista técnico real, que fala português, irá iniciar o atendimento com você. Nada de longas filas de espera ou robôs.'
   },
   {
     q: 'Como a Gerti consegue ser até 40% mais barata que a AWS ou Google?',
