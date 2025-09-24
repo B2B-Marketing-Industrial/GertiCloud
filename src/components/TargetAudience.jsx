@@ -18,7 +18,7 @@ const audienceList = [
   {
     icon: <FaLifeRing size={40} />,
     title: 'Desenvolvedores e Analistas de Infraestrutura',
-    text: 'Nem todo mundo precisa ser especilista em cloud, mas precisa de alguém para te dar suporte técnico de verdade quando travar.'
+    text: 'Nem todo mundo precisa ser especialista em Cloud, mas precisa de alguém para te dar suporte técnico de verdade quando travar.'
   },
   {
     icon: <FaShoppingCart size={40} />,
