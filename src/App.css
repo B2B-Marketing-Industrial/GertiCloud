@@ -1015,82 +1015,86 @@ body {
   }
 }
 
-/* libera as setas para “saírem” do container do slider */
+/* =========================
+   Pricing Carousel (setas externas)
+   ========================= */
+
+/* 1) Wrapper externo que segura o slider e as setas */
+.pricing-swiper-outer {
+  position: relative;      /* base para posicionar as setas absolutas */
+  overflow: visible;       /* deixa as setas “saírem” das bordas */
+}
+
+/* 2) O próprio Swiper */
 .pricing-swiper {
-  overflow: visible;
-  /* tamanho/cor do ícone padrão do Swiper */
-  --swiper-navigation-size: 18px;
-  --swiper-navigation-color: var(--gerti-blue);
+  overflow: hidden;        /* impede cards pela metade */
+  --swiper-pagination-color: var(--gerti-blue);
 }
 
-/* Desktop: setas fora dos cards */
+/* 3) Botões de navegação externos (iguais para os dois lados) */
+.swiper-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  background: var(--gerti-white);
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 8px 20px rgba(0,0,0,.12);
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+/* Ícones usando setas CSS simples; troque por SVG se preferir */
+.swiper-nav::before {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--gerti-blue);
+  border-right: 2px solid var(--gerti-blue);
+  transform: rotate(45deg);
+}
+.pricing-prev::before { transform: rotate(-135deg); } /* seta ← */
+.pricing-next::before { transform: rotate(45deg);  }  /* seta → */
+
+.swiper-nav:hover {
+  box-shadow: 0 10px 26px rgba(0,0,0,.18);
+  transform: translateY(-50%) scale(1.03);
+}
+
+/* 4) Posições das setas no DESKTOP (fora dos cards) */
 @media (min-width: 992px) {
-  .pricing-swiper .swiper-button-prev,
-  .pricing-swiper .swiper-button-next {
-    top: 50%;
-    transform: translateY(-50%);
-    width: 48px;
-    height: 48px;
-    border-radius: 999px;
-    background: var(--gerti-white);
-    border: 1px solid rgba(0,0,0,.06);
-    box-shadow: 0 6px 20px rgba(0,0,0,.12);
-    z-index: 20;
-    margin: 0; /* zera qualquer margem herdada */
-  }
-  /* ajuste fino: valor negativo “empurra” para fora */
-  .pricing-swiper .swiper-button-prev { left: -28px !important; }
-  .pricing-swiper .swiper-button-next { right: -28px !important; }
-
-  .pricing-swiper .swiper-button-prev::after,
-  .pricing-swiper .swiper-button-next::after {
-    font-size: 18px; /* tamanho do ícone */
-  }
+  .pricing-prev { left: -64px; }
+  .pricing-next { right: -64px; }
 }
-  
-/* Mobile/Tablet: setas dentro do slider, sem atrapalhar leitura */
+
+/* 5) No tablet/mobile as setas ficam dentro do carrossel, rente às bordas */
 @media (max-width: 991.98px) {
-  .pricing-swiper .swiper-button-prev { left: 0;  margin: 0; }
-  .pricing-swiper .swiper-button-next { right: 0; margin: 0; }
+  .pricing-prev { left: 6px;  }
+  .pricing-next { right: 6px; }
 }
 
+/* 6) Container pai da seção pode deixar “vazar” as setas no desktop */
+.pricing-section .container { overflow: visible; }
+
+/* 7) Ajustes de centralização dos conteúdos dos cards no mobile (mantidos) */
 @media (max-width: 767.98px) {
-
-  /* 1) Centraliza tudo que está no corpo do card */
-  .pricing-section .swiper-slide .card .card-body{
-    text-align: center !important;
-  }
-
-  /* 2) O container do link "Detalhes do plano" tem .text-start no JSX;
-        aqui sobrescrevemos para o centro */
-  .pricing-section .swiper-slide .card .card-body .text-start{
-    text-align: center !important;
-  }
-
-  /* 3) Linha das “specs” (vCPU | RAM): centraliza e mantém um gap estável */
+  .pricing-section .swiper-slide .card .card-body { text-align: center !important; }
+  .pricing-section .swiper-slide .card .card-body .text-start { text-align: center !important; }
   .pricing-section .swiper-slide .card .card-body .text-muted.mb-2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: .75rem;
-    flex-wrap: wrap;
+    display: flex; justify-content: center; align-items: center; gap: .75rem; flex-wrap: wrap;
   }
-  /* remove o empurrão do .me-3 do Bootstrap nessa linha */
-  .pricing-section .swiper-slide .card .card-body .text-muted.mb-2 .me-3{
-    margin-right: 0 !important;
-  }
-
-  /* 4) Garante que o preço grande não “quebre” alinhamento */
-  .pricing-section .swiper-slide .card .card-body .fs-1{
-    display: inline-block;
-  }
-
-   .pricing-section .card .btn{
-    line-height: 1.2;
-    padding-top: .8rem;
-    padding-bottom: .6rem;
-  }
+  .pricing-section .swiper-slide .card .card-body .text-muted.mb-2 .me-3{ margin-right: 0 !important; }
+  .pricing-section .swiper-slide .card .card-body .fs-1{ display: inline-block; }
+  .pricing-section .card .btn{ line-height: 1.2; padding-top: .8rem; padding-bottom: .6rem; }
 }
+
+
 
 /* ===== Pricing: quebra "Começar Agora!" em 2 linhas só no mobile ===== */
 @media (max-width: 575.98px) {
@@ -1113,3 +1117,9 @@ body {
 }
 
 .pricing-section { position: relative; }
+
+/* 1) container do slider não corta nada */
+.pricing-section .container { overflow: visible; }
+
+
+

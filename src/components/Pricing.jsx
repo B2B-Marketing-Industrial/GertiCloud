@@ -172,12 +172,18 @@ export default function Pricing() {
                             </Form.Select>
                         </Col>
                         <Col xs={12} sm="auto" className="d-flex justify-content-center">
+
                             <Form.Select value={zoneUuid} onChange={(e) => setZoneUuid(e.target.value)} aria-label="Zona" disabled={zonesLoading || !!zonesError} className="w-100 w-sm-auto">
                                 {zonesLoading && <option>Carregando zonas…</option>}
                                 {zonesError && <option disabled>Erro ao carregar zonas</option>}
+
                                 {!zonesLoading && !zonesError && zones.map((z) => (
-                                 <option key={z.uuid} value={z.uuid}>{z.displayLabel}</option>))}
-                            </Form.Select>
+                                  <option key={z.uuid} value={z.uuid}>
+                                 {z.displayLabel ?? `${z.name}${z.countryName ? ` — ${z.countryName}` : ""}`}
+                                 </option>
+                                  ))}
+                                </Form.Select>
+
                         </Col>
                         {offering === "BUNDLE" && (
                             <Col xs={12} lg={4}>
@@ -198,76 +204,84 @@ export default function Pricing() {
         {error && ( <Alert variant={offering === "BUNDLE" ? "warning" : "danger"} className="text-center"> {offering === "BUNDLE" ? "Não foi possível carregar os planos RESERVED para essa combinação (zona/categoria). Tente outra categoria ou zona." : `Falha ao consultar preços: ${error.message}`} </Alert> )}
         {!loading && !error && plans.length === 0 && ( <Alert variant="warning" className="text-center"> Nenhum plano retornado para esta zona. </Alert> )}
 
-        {/* Carrossel de Planos */}
-        {!loading && !error && plans.length > 0 && (
-          <Swiper
-            modules={[Navigation, Pagination]}
-            spaceBetween={30}
-            navigation={true}
-            pagination={{ clickable: true }}
-            breakpoints={{
-              576: { slidesPerView: 1, spaceBetween: 20 },
-              768: { slidesPerView: 2, spaceBetween: 30 },
-              992: { slidesPerView: 3, spaceBetween: 30 },
-              1200: { slidesPerView: 4, spaceBetween: 30 },
-            }}
-            className="py-4 position-relative pricing-swiper" 
-          >
-            {plans.map((p) => (
-              <SwiperSlide key={p.id} className="h-100">
-                <Card className="h-100 shadow-sm">
-                  <Card.Body className="d-flex flex-column">
-                    <h3 className="fw-bold">{p.name}</h3>
-                    <div className="text-muted mb-2">
-                      {p.vcpu != null && <span className="me-3">{p.vcpu} vCPU</span>}
-                      {Number.isFinite(p.memGb) && (<span>{Number(p.memGb).toFixed(1)} GB RAM</span>)}
-                    </div>
-                    <div className="my-2">
-                      {Number.isFinite(p.hour) ? (
-                        <>
-                          <div className="fs-1 fw-bold">
-                            {brl(p.hour)} <span className="fs-6 text-muted">/h</span>
-                          </div>
-                          <div className="text-muted">≈ {brl(p.month)} / mês</div>
-                        </>
-                      ) : (
-                        <div className="text-muted">Preço por hora não informado</div>
-                      )}
-                    </div>
-                    {/* NOVO LINK DE TEXTO PARA ABRIR O MODAL */}
-                    <div className="text-start mt-2 mb-3">
-                      <span 
-                        className="details-link" 
-                        onClick={() => openDetails(p)}
-                        role="button" // Melhora a acessibilidade
-                        tabIndex={0} // Permite focar com o teclado
-                      >
-                        Detalhes do plano
-                      </span>
-                    </div>
+       {/* Carrossel de Planos */}
+{!loading && !error && plans.length > 0 && (
+  <div className="pricing-swiper-outer">
+    <button className="swiper-nav pricing-prev" aria-label="Anterior" />
+    <button className="swiper-nav pricing-next" aria-label="Próximo" />
 
-                    <div className="mt-auto d-flex gap-2">
-                      {/* BOTÃO PRINCIPAL ATUALIZADO */}
-                      <Button
-                        as="a" // Renderiza o botão como um link <a>
-                        href={SIGNUP_URL} // Aponta para a URL de cadastro
-                        target="_blank" // Abre o link numa nova aba
-                        rel="noopener noreferrer"
-                        className="w-100"
-                                 >
-                        Começar Agora!
-                      </Button>
-                      {/* BOTÃO SECUNDÁRIO ATUALIZADO */}
-                      <Button variant="outline-secondary" className="w-100" onClick={() => handleContactSpecialist(p)}>
-                        Falar com Especialista
-                      </Button>
+    <Swiper
+      modules={[Navigation, Pagination]}
+      pagination={{ clickable: true }}
+      centeredSlides={false}
+      loop={false}
+      watchOverflow={true}
+      spaceBetween={30}
+      breakpoints={{
+        576:  { slidesPerView: 1, spaceBetween: 20 },
+        768:  { slidesPerView: 2, spaceBetween: 30 },
+        992:  { slidesPerView: 3, spaceBetween: 30 },
+        1200: { slidesPerView: 4, spaceBetween: 30 },
+      }}
+      onBeforeInit={(swiper) => {
+        swiper.params.navigation = {
+          ...(swiper.params.navigation || {}),
+          prevEl: '.pricing-prev',
+          nextEl: '.pricing-next',
+        };
+        swiper.navigation.init();
+        swiper.navigation.update();
+      }}
+      className="py-4 pricing-swiper"
+    >
+      {plans.map((p) => (
+        <SwiperSlide key={p.id} className="h-100">
+          <Card className="h-100 shadow-sm">
+            <Card.Body className="d-flex flex-column">
+              <h3 className="fw-bold">{p.name}</h3>
+              <div className="text-muted mb-2">
+                {p.vcpu != null && <span className="me-3">{p.vcpu} vCPU</span>}
+                {Number.isFinite(p.memGb) && (<span>{Number(p.memGb).toFixed(1)} GB RAM</span>)}
+              </div>
+              <div className="my-2">
+                {Number.isFinite(p.hour) ? (
+                  <>
+                    <div className="fs-1 fw-bold">
+                      {brl(p.hour)} <span className="fs-6 text-muted">/h</span>
                     </div>
-                  </Card.Body>
-                </Card>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        )}
+                    <div className="text-muted">≈ {brl(p.month)} / mês</div>
+                  </>
+                ) : (
+                  <div className="text-muted">Preço por hora não informado</div>
+                )}
+              </div>
+              <div className="text-start mt-2 mb-3">
+                <span className="details-link" onClick={() => openDetails(p)} role="button" tabIndex={0}>
+                  Detalhes do plano
+                </span>
+              </div>
+              <div className="mt-auto d-flex gap-2">
+                <Button
+                  as="a"
+                  href={SIGNUP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-100"
+                  disabled={!Number.isFinite(p.hour)}
+                >
+                  Começar Agora!
+                </Button>
+                <Button variant="outline-secondary" className="w-100" onClick={() => handleContactSpecialist(p)}>
+                  Falar com Especialista
+                </Button>
+              </div>
+            </Card.Body>
+          </Card>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+)}
         
         {/* Modal de Detalhes do Plano */}
         <Modal 
@@ -329,7 +343,8 @@ export default function Pricing() {
     className="btn-cta btn-solid-primary" // sólido azul + mesmo hover
     aria-label="Começar Agora!"
   >
-    Começar Agora!
+    Começar 
+    Agora!
   </Button>
 </Modal.Footer>
         </Modal>
