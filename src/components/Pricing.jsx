@@ -27,9 +27,7 @@ import "swiper/css/pagination";
 
 // --- Constantes e Funções Utilitárias ---
 const HOURS_IN_MONTH = 730;
-// URL DA PÁGINA DE CADASTRO
 const SIGNUP_URL = "https://cloud.gerti.com.br/signup";
-// NÚMERO DO WHATSAPP
 const WHATSAPP_NUMBER = "551139959564"; 
 
 const brl = (n) =>
@@ -209,6 +207,7 @@ export default function Pricing() {
   <div className="pricing-swiper-outer">
     <button className="swiper-nav pricing-prev" aria-label="Anterior" />
     <button className="swiper-nav pricing-next" aria-label="Próximo" />
+
 
     <Swiper
       modules={[Navigation, Pagination]}
