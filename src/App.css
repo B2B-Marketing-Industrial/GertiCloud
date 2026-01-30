@@ -61,6 +61,16 @@ body {
     );
 }
 
+/* Subtítulo (base: desktop + mobile) */
+.hero-description{
+  color: var(--gerti-white);
+  opacity: .92;
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  line-height: 1.6;
+  margin: 0 0 22px;
+  max-width: 52ch;
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -71,58 +81,13 @@ body {
 /* Headline */
 .hero-title {
   color: var(--gerti-white);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1.1;
-  font-size: clamp(28px, 5vw, 54px);
-  margin-bottom: 30px;
+  line-height: 1.15;
+  font-size: clamp(2.6rem, 4vw, 3.4rem);
+  margin-bottom: 16px;
 }
 
-.hero-inner {
-  width: 100%;
-  max-width: 780px;
-  margin-inline: auto;
-}
-
-/* Lista de benefícios */
-.hero-benefits {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 28px 0;
-  display: grid;
-  gap: 10px;
- }
-
-.hero-benefits li {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  gap: 10px;
-  color: var(--gerti-white);
-  font-size: clamp(14px, 2.6vw, 18px);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 10px 14px;
-  border-radius: 999px; /* pill */
-  backdrop-filter: blur(2px);
-}
-
-.hero-benefits li svg {
-  flex: 0 0 auto;
-  font-size: 18px;
-  color: var(--gerti-green);
-}
-
-.hero-benefits li span {
-  display: inline-block;
-}
-
-/* Em telas médias+, alinha a lista e reduz “pill width” */
-@media (min-width: 768px) {
-  .hero-benefits {
-   grid-template-columns: 1fr;
-  }
-}
 
 /* MOBILE/TABLET: recentra um pouco para não perder o assunto */
 @media (max-width: 991.98px){
@@ -132,8 +97,8 @@ body {
   }
 
   .hero-content{
-    padding-block-start: clamp(100px, 22vh, 160px); /* antes: ~72px */
-   
+    padding-block-start: clamp(100px, 22vh, 120px); /* antes: ~72px */
+    padding-block-end: 1px;
   }
 
   .hero-title{
@@ -145,22 +110,22 @@ body {
     padding-inline: 24px;
   }
 
+  .hero-description {
+  color: var(--gerti-white) !important;
+  opacity: .92;
+  font-size: clamp(1rem, 1.15vw, 1.15rem);
+  line-height: 1.6;
+  margin: 0 0 22px;
+   max-width: 52ch;
+  }
+
   .hero-text-col{
-    /* centraliza tudo no mobile/tablet */
     text-align: center !important;
     padding-left: 0 !important;
     margin-left: 0 !important;
+    padding-inline: 20px !important;
   }
-
-  .hero-benefits{
-    justify-items: center;   /* chips centralizados */
-    margin-top: 20px;  /* pequeno respiro extra após o título */
-     gap: 14px;      
-      }
-      
-  .hero-benefits li{
-    width: fit-content;      /* não deixar o chip esticar demais */
-  }
+    
 
   .btn-gerti-green{
     display: inline-flex;    /* centraliza o botão */
@@ -170,10 +135,6 @@ body {
 
 /* Media query para telas de desktop (>= 992px) */
 @media (min-width: 992px) {
-  /* Alinha os itens da lista à esquerda em telas grandes */
-  .hero-benefits li {
-    justify-self: flex-start;
-  }
 
   .hero-content .text-lg-start {
     text-align: left !important;

@@ -24,24 +24,15 @@ export default function Hero() {
        <Row className="align-items-center h-100"> 
           <Col xs={12} lg={7} className="text-lg-start hero-text-col">
             <h1 className="hero-title">
-              Resolva em Minutos,<br/> não em Tickets.
+              Sua Nuvem em Reais e <br />
+              Configurada por Especialistas
             </h1>
 
-            {/* Lista de benefícios (subtítulo substituído) */}
-            <ul className="hero-benefits">
-              <li>
-                <FaCheckCircle aria-hidden="true" />
-                <span>Suporte em minutos, não em horas.</span>
-              </li>
-              <li>
-                <FaCheckCircle aria-hidden="true" />
-                <span>Ganhe R$500 para testar por 7 dias.</span>
-              </li>
-              <li>
-                <FaCheckCircle aria-hidden="true" />
-                <span>Economize até 40% nos custos de Cloud.</span>
-              </li>
-            </ul>
+            <p className="hero-description">
+              {/* NOVO: descrição para explicar a promessa e reduzir dúvida (especialmente B2B) */}
+              Chega de faturas imprevisíveis em Dólar. Na GERTI, migramos e gerenciamos sua
+              infraestrutura com suporte humano no Brasil. Conformidade LGPD e economia de até 30%.
+              </p>
 
             {/* CTA principal */}
             <Button
@@ -51,7 +42,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Converse com um Especialista
+              Quero Meu Time de Cloud
             </Button>
           </Col>
         </Row>
