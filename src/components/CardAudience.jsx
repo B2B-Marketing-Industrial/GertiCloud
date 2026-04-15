@@ -8,13 +8,13 @@ function CardAudience({ item }) {
     const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     return (
-        <Card className="border-0 shadow-sm p-3 d-flex flex-column h-100 card-audience position-relative">
-            <Card.Header className="bg-transparent border-0 p-0 mb-2">
+        <Card className="border-1 p-3 d-flex flex-column h-100 card-audience position-relative">
+            <Card.Header className="bg-transparent border-0 p-0">
                 <Card.Title className="fw-semibold mb-2">{item.title}</Card.Title>
                 <Card.Text className="text-muted small mb-0">{item.description}</Card.Text>
             </Card.Header>
             <Card.Body className="d-flex flex-column p-0">
-                <Card.Subtitle className="mb-3">
+                <Card.Subtitle className="my-3">
                     <span className="badge bg-light text-primary fw-semibold">{item.subtitle}</span>
                 </Card.Subtitle>
                 <ul className="list-unstyled mb-4 small">

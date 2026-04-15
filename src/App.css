@@ -27,7 +27,7 @@ body {
 }
 
 .card-audience .card-header {
-  min-height: 150px; /* Ajuste conforme necessário */
+  min-height: 120px; /* Ajuste conforme necessário */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -109,7 +109,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.15;
-  font-size: clamp(2.6rem, 4vw, 3.4rem);
+  font-size: clamp(2.6rem, 4vw, 3.0rem);
   margin-bottom: 16px;
 }
 
@@ -145,10 +145,7 @@ body {
   }
 
   .hero-text-col{
-    text-align: center !important;
-    padding-left: 0 !important;
-    margin-left: 0 !important;
-    padding-inline: 20px !important;
+    text-align: center;
   }
     
 
@@ -168,7 +165,7 @@ body {
   .hero-text-col {
     margin-left: 0;
     text-align: left;                 /* <— mantém à esquerda */
-    padding-left: 5rem !important;    /* respiro */
+    padding-right: 5rem !important;    /* respiro */
   }
 }
 

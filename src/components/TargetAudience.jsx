@@ -8,7 +8,7 @@ const TargetAudience = () => {
       <Container>
         <Row className="text-center mb-5">
           <Col>
-            <h2 className="section-title">Escolha o Combo de Cloud Pensado para o Seu Negócio</h2>
+            <h2 className="section-title">Escolha o combo de cloud ideal para seu negócio</h2>
             <p className="lead text-muted">Soluções pensadas para quem vive a tecnologia no dia a dia e não tem tempo a perder. Identifique o seu perfil abaixo, confira a configuração recomendada e chame nosso time técnico no WhatsApp para fazermos o setup por você. Preço em Reais e suporte humano de verdade.</p>
           </Col>
         </Row>

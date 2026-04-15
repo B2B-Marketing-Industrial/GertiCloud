@@ -12,32 +12,16 @@ export default function FinalCTA() {
       <Container className="text-center">
         <div className="cta-card">
           <span className="cta-eyebrow">Consultoria gratuita</span>
-          
-          {/* Título mais direto e impactante */}
-          <h2 className="cta-title">Foque em crescer. Nós cuidamos do resto.</h2>
-          
-          {/* Subtítulo simplificado para maior clareza */}
-          <p className="cta-subtitle">
-            Otimize custos. Aumente a produtividade. Tenha tranquilidade para inovar.
-          </p>
-
-           <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-gerti-green cta-btn"
-          >
-            {/* Alteração AQUI: Adicionado span com classe de visibilidade */}
+          <h2 className="cta-title">Ainda não sabe qual combo escolher?</h2>
+          <p className="cta-subtitle">Fale com um especialista e receba a recomendação ideal para sua operação</p>
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-gerti-green cta-btn">
             <span className="me-2 d-none d-md-inline-flex">
               <FaWhatsapp size={20} />
             </span>
-            Agende sua consultoria gratuita de 15 minutos
+            Quero ajuda para escolher
           </a>
-
-          <div className="w-100"></div> {/* Div invisível para quebrar a linha */}
-          <p className="cta-footnote mt-2">
-            Sem pressão, sem discurso de vendas. Apenas análise e orientação.
-          </p>
+          <div className="w-100"></div>
+          <p className="cta-footnote mt-2">Sem pressão, sem discurso de vendas. Apenas análise e orientação.</p>
         </div>
       </Container>
     </section>
