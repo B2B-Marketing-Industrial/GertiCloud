@@ -44,16 +44,16 @@ const SupportProcess = () => {
           <p className="lead text-muted">(O Que Ninguém Mais Faz)</p>
         </div>
 
-       {/* Desktop / Tablet: timeline horizontal */}
-<div className="timeline timeline--horizontal d-none d-md-flex">
-  {steps.map((step, i) => (
-    <div className="timeline-step" key={i}>
-      <div className="timeline-dot">{step.icon}</div>
-      <h5 className="timeline-title">{step.title}</h5>
-      <p className="timeline-text">{step.text}</p>
-    </div>
-  ))}
-</div>
+        {/* Desktop / Tablet: timeline horizontal */}
+        <div className="timeline timeline--horizontal d-none d-md-flex">
+          {steps.map((step, i) => (
+            <div className="timeline-step" key={i}>
+              <div className="timeline-dot">{step.icon}</div>
+              <h5 className="timeline-title">{step.title}</h5>
+              <p className="timeline-text">{step.text}</p>
+            </div>
+          ))}
+        </div>
 
         {/* Mobile: timeline vertical */}
         <div className="timeline timeline--vertical d-md-none">

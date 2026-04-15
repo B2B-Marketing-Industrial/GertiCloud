@@ -26,6 +26,31 @@ body {
   height: auto; /* Mantém a proporção da imagem */
 }
 
+.card-audience .card-header {
+  min-height: 150px; /* Ajuste conforme necessário */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.card-audience {
+  border-radius: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-audience:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-audience .btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.card-audience .btn:hover {
+  transform: translateY(-1px);
+}
+
 /* Hero base */
 .hero-section {
   position: relative;
