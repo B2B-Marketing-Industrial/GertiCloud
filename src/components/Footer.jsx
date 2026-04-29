@@ -50,7 +50,7 @@ export default function Footer() {
               onClick={() => scrollIntoSection("sobre")}
             />
             <p className="footer-description">Especialistas em soluções de computação em nuvem, oferecendo servidores de alta performance e segurança inabalável.</p>
-            <div className="d-flex flex-row flex-wrap justify-content-center align-content-center justify-content-md-start mt-3">
+            <div className="d-flex flex-row flex-wrap h-full justify-content-center align-content-center justify-content-md-start mt-3">
               <iframe
                 className="ssc-badge"
                 src="https://scores.securityscorecard.io/security-rating/badge/gerti.com.br"
@@ -68,9 +68,9 @@ export default function Footer() {
             <hr className="footer-underline" />
             <Nav className="flex-column">
               {quickLinks.map((link) => (
-                <a onClick={e => { e.preventDefault(), scrollIntoSection(link.href.replace("#", "")) }} key={link.text} href={link.href} className="footer-link p-0 mb-2">
+                <Nav.Link key={link.text} href={link.href} className="footer-link p-0 mb-2">
                   {link.text}
-                </a>
+                </Nav.Link>
               ))}
             </Nav>
           </Col>

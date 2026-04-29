@@ -12,6 +12,7 @@ import Faq from './components/Faq.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
 import PorqueGerti from './components/PorqueGerti.jsx';
+import ExitIntentPopup from './components/ExitIntentPopup.jsx';
 
 function App() {
   const ref_home = useRef(null);
@@ -33,6 +34,8 @@ function App() {
 
   return (
     <>
+      <ExitIntentPopup />
+
       <Header
         ref_home={ref_home}
         ref_planos={ref_planos}
