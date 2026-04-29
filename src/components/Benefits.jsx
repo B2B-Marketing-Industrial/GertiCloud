@@ -45,11 +45,11 @@ const benefitsList = [
 const Benefits = () => {
   return (
     // A classe 'bg-light' foi removida daqui
-    <section className="benefits-section py-5" id="beneficios">
+    <section className="final-cta py-5" id="beneficios">
       <Container>
         <Row className="text-center mb-5">
           <Col>
-            <h2 className="section-title">O Que Você Ganha na GERTI Cloud ?</h2>
+            <h2 className="section-title text-white">O Que Você Ganha na GERTI Cloud ?</h2>
           </Col>
         </Row>
         <Row>

@@ -47,7 +47,7 @@ const SupportProcess = () => {
         {/* Desktop / Tablet: timeline horizontal */}
         <div className="timeline timeline--horizontal d-none d-md-flex">
           {steps.map((step, i) => (
-            <div className="timeline-step" key={i}>
+            <div className="timeline-step" style={{height: "200px", maxHeight: "200px"}} key={i}>
               <div className="timeline-dot">{step.icon}</div>
               <h5 className="timeline-title">{step.title}</h5>
               <p className="timeline-text">{step.text}</p>

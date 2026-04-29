@@ -2,7 +2,7 @@
 import React from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-import logoFooter from "../assets/logo-gerti-footer.png"; 
+import logoFooter from "../assets/logo-gerti-footer.png";
 
 const whatsappLink = `https://api.whatsapp.com/send/?phone=551139959564&text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20com%20um%20especialista%20sobre%20as%20solu%C3%A7%C3%B5es%20Gerti%20Cloud.&type=phone_number&app_absent=0`;
 
@@ -13,11 +13,27 @@ const quickLinks = [
 ];
 
 const legalLinks = [
-  { href: "https://suporte.gerti.com.br/r/termos-legais-cloud-computing-public/externals/knowledges/show/34529/d553ffa9-bd54-4ec0-a89f-d47918c3b2bd/11610",
-    text: "Termos de Uso"  },
-  {  href: "https://suporte.gerti.com.br/r/politica-de-uso-e-privacidade-cloud-computing-public/externals/knowledges/show/34530/7e575c8b-06a7-4f81-9f22-4f7c2bd0cf32/11610", 
-    text: "Política de Privacidade"  },
+  {
+    href: "https://suporte.gerti.com.br/r/termos-legais-cloud-computing-public/externals/knowledges/show/34529/d553ffa9-bd54-4ec0-a89f-d47918c3b2bd/11610",
+    text: "Termos de Uso"
+  },
+  {
+    href: "https://suporte.gerti.com.br/r/politica-de-uso-e-privacidade-cloud-computing-public/externals/knowledges/show/34530/7e575c8b-06a7-4f81-9f22-4f7c2bd0cf32/11610",
+    text: "Política de Privacidade"
+  },
 ];
+
+function scrollIntoSection(id) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+}
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -25,32 +41,26 @@ export default function Footer() {
   return (
     <footer className="footer-gerti text-white pt-5 pb-4">
       <Container>
-        {/* Grid superior com 4 colunas para o logo, links rápidos, legal e contato */}
         <Row className="gy-4">
-          
-          {/* Coluna 1: Logo e Descrição */}
-<Col xs={12} md={5} lg={3} className="text-center text-md-start">
-  <img
-    src={logoFooter}
-    alt="Logo Gerti Cloud"
-    className="footer-logo footer-logo-raised"
-  />
-  <p className="footer-description">
-    Especialistas em soluções de computação em nuvem, oferecendo servidores de alta performance e segurança inabalável.
-  </p>
-
-  {/* SELINHO — centralizado no mobile e à esquerda no desktop */}
-  <div className="d-flex flex-row flex-wrap justify-content-center align-content-center justify-content-md-start mt-3">
-    <iframe
-      className="ssc-badge"
-      src="https://scores.securityscorecard.io/security-rating/badge/gerti.com.br"
-      width="256"
-      height="100"
-      frameBorder="0"
-      title="Security Scorecard Badge"
-    />
-  </div>
-</Col>
+          <Col xs={12} md={5} lg={3} className="text-center text-md-start">
+            <img
+              src={logoFooter}
+              alt="Logo Gerti Cloud"
+              className="footer-logo footer-logo-raised"
+              onClick={() => scrollIntoSection("sobre")}
+            />
+            <p className="footer-description">Especialistas em soluções de computação em nuvem, oferecendo servidores de alta performance e segurança inabalável.</p>
+            <div className="d-flex flex-row flex-wrap justify-content-center align-content-center justify-content-md-start mt-3">
+              <iframe
+                className="ssc-badge"
+                src="https://scores.securityscorecard.io/security-rating/badge/gerti.com.br"
+                width="256"
+                height="100"
+                frameBorder="0"
+                title="Security Scorecard Badge"
+              />
+            </div>
+          </Col>
 
           {/* 2. Coluna 2: Links Rápidos */}
           <Col md={3} lg={3} className="text-center text-md-center">
@@ -58,12 +68,12 @@ export default function Footer() {
             <hr className="footer-underline" />
             <Nav className="flex-column">
               {quickLinks.map((link) => (
-                <Nav.Link key={link.text} href={link.href} className="footer-link p-0 mb-2">
+                <a onClick={e => { e.preventDefault(), scrollIntoSection(link.href.replace("#", "")) }} key={link.text} href={link.href} className="footer-link p-0 mb-2">
                   {link.text}
-                </Nav.Link>
+                </a>
               ))}
             </Nav>
-            </Col>
+          </Col>
 
           {/* 3. Coluna 3: Links Legais */}
           <Col md={4} lg={3} className="text-center text-md-center">
@@ -76,7 +86,7 @@ export default function Footer() {
                 </Nav.Link>
               ))}
             </Nav>
-            </Col>
+          </Col>
 
           {/* 4. Coluna 4: Contato */}
           <Col md={5} lg={3} className="text-center text-md-center">
@@ -111,7 +121,7 @@ export default function Footer() {
         {/* Base do rodapé com ícones sociais e texto de direitos autorais */}
         <Row className="footer-base pt-3 mt-4 align-items-center">
           <Col md={6}>
-            </Col>
+          </Col>
           <Col md={6} className=" text-md-end">
             <small className="footer-copy">
               © {year} Gerti Cloud. Todos os direitos reservados.

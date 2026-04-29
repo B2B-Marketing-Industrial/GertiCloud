@@ -9,15 +9,9 @@ export default function Header() {
   const closeIfMobile = () => setExpanded(false);
 
   return (
-    <Navbar
-      expand="lg"
-      fixed="top"
-      className="header-gerti"
-      expanded={expanded}
-      onToggle={setExpanded}
-    >
+    <Navbar expand="lg" fixed="top" className="header-gerti" expanded={expanded} onToggle={setExpanded}>
       <Container>
-        <Navbar.Brand href="#home" onClick={closeIfMobile} style={{ cursor: "pointer" }}>
+        <Navbar.Brand href="#sobre" onClick={closeIfMobile} style={{ cursor: "pointer" }}>
           <img src={logoGerti} height="40" className="d-inline-block align-top" alt="Logo Gerti" />
         </Navbar.Brand>
 
@@ -29,27 +23,10 @@ export default function Header() {
             <Nav.Link href="#beneficios" onClick={closeIfMobile}>Diferenciais</Nav.Link>
             <Nav.Link href="#faq" onClick={closeIfMobile}>FAQ</Nav.Link>
           </Nav>
-           <div className="d-flex flex-column flex-lg-row align-items-center gap-1">
-         <Button
-  as="a"
-  href="https://cloud.gerti.com.br/login"
-  className="btn-cta btn-outline-gerti-blue"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Entrar no console
-</Button>
-
-<Button
-  as="a"
-  href="https://cloud.gerti.com.br/signup"
-  className="btn-cta btn-solid-primary"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Crie sua conta gratuita!
-</Button>
-        </div>
+          <div className="d-flex flex-column flex-lg-row align-items-center gap-1">
+            <Button as="a" href="https://cloud.gerti.com.br/login" className="btn-cta btn-outline-gerti-blue" target="_blank" rel="noopener noreferrer">Entrar no console</Button>
+            <Button as="a" href="https://cloud.gerti.com.br/signup" className="btn-cta btn-solid-primary" target="_blank" rel="noopener noreferrer">Crie sua conta gratuita!</Button>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -11,6 +11,7 @@ import FinalCTA from "./components/FinalCTA.jsx";
 import Faq from './components/Faq.jsx';
 import Footer from './components/Footer.jsx';
 import './App.css';
+import PorqueGerti from './components/PorqueGerti.jsx';
 
 function App() {
   const ref_home = useRef(null);
@@ -19,6 +20,7 @@ function App() {
   const ref_benefits = useRef(null);
   const ref_planos = useRef(null);
   const ref_cta = useRef(null);
+  const ref_porque_gerti = useRef(null);
 
   // WhatsApp com mensagem pré-preenchida
   const msg = encodeURIComponent('Olá! Quero agendar a consultoria gratuita de 15 minutos.');
@@ -44,6 +46,9 @@ function App() {
       <main>
         <section ref={ref_ideal_for}></section>
         <TargetAudience />
+
+        <section ref={ref_porque_gerti}></section>
+        <PorqueGerti />
 
         <section ref={ref_benefits}>
           <Benefits />
